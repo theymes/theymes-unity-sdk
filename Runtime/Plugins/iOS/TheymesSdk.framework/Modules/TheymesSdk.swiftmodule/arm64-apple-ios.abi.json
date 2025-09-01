@@ -1,0 +1,2224 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TheymesSdk",
+    "printedName": "TheymesSdk",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TheymesDelegate",
+        "printedName": "TheymesDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "didOpen",
+            "printedName": "didOpen()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(pl)TheymesDelegate(im)didOpen",
+            "mangledName": "$s10TheymesSdk0A8DelegateP7didOpenyyF",
+            "moduleName": "TheymesSdk",
+            "genericSig": "<τ_0_0 where τ_0_0 : TheymesSdk.TheymesDelegate>",
+            "sugared_genericSig": "<Self where Self : TheymesSdk.TheymesDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Optional",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didClose",
+            "printedName": "didClose()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(pl)TheymesDelegate(im)didClose",
+            "mangledName": "$s10TheymesSdk0A8DelegateP8didCloseyyF",
+            "moduleName": "TheymesSdk",
+            "genericSig": "<τ_0_0 where τ_0_0 : TheymesSdk.TheymesDelegate>",
+            "sugared_genericSig": "<Self where Self : TheymesSdk.TheymesDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Optional",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didUpdateUnreadMessageCount",
+            "printedName": "didUpdateUnreadMessageCount(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(pl)TheymesDelegate(im)didUpdateUnreadMessageCount:",
+            "mangledName": "$s10TheymesSdk0A8DelegateP27didUpdateUnreadMessageCountyySiF",
+            "moduleName": "TheymesSdk",
+            "genericSig": "<τ_0_0 where τ_0_0 : TheymesSdk.TheymesDelegate>",
+            "sugared_genericSig": "<Self where Self : TheymesSdk.TheymesDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Optional",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didUpdateUnansweredMessageCount",
+            "printedName": "didUpdateUnansweredMessageCount(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(pl)TheymesDelegate(im)didUpdateUnansweredMessageCount:",
+            "mangledName": "$s10TheymesSdk0A8DelegateP31didUpdateUnansweredMessageCountyySiF",
+            "moduleName": "TheymesSdk",
+            "genericSig": "<τ_0_0 where τ_0_0 : TheymesSdk.TheymesDelegate>",
+            "sugared_genericSig": "<Self where Self : TheymesSdk.TheymesDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Optional",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@TheymesSdk@objc(pl)TheymesDelegate",
+        "mangledName": "$s10TheymesSdk0A8DelegateP",
+        "moduleName": "TheymesSdk",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "PhotosUI",
+        "printedName": "PhotosUI",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "UniformTypeIdentifiers",
+        "printedName": "UniformTypeIdentifiers",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "UserNotifications",
+        "printedName": "UserNotifications",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Network",
+        "printedName": "Network",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "os",
+        "printedName": "os",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Theymes",
+        "printedName": "Theymes",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "delegate",
+            "printedName": "delegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WeakStorage",
+                "printedName": "(any TheymesSdk.TheymesDelegate)?"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cpy)delegate",
+            "mangledName": "$s10TheymesSdk0A0C8delegateAA0A8Delegate_pSgvpZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl",
+              "ObjC"
+            ],
+            "ownership": 1,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(any TheymesSdk.TheymesDelegate)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TheymesDelegate",
+                        "printedName": "any TheymesSdk.TheymesDelegate",
+                        "usr": "c:@M@TheymesSdk@objc(pl)TheymesDelegate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)delegate",
+                "mangledName": "$s10TheymesSdk0A0C8delegateAA0A8Delegate_pSgvgZ",
+                "moduleName": "TheymesSdk",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(any TheymesSdk.TheymesDelegate)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TheymesDelegate",
+                        "printedName": "any TheymesSdk.TheymesDelegate",
+                        "usr": "c:@M@TheymesSdk@objc(pl)TheymesDelegate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)setDelegate:",
+                "mangledName": "$s10TheymesSdk0A0C8delegateAA0A8Delegate_pSgvsZ",
+                "moduleName": "TheymesSdk",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10TheymesSdk0A0C8delegateAA0A8Delegate_pSgvMZ",
+                "mangledName": "$s10TheymesSdk0A0C8delegateAA0A8Delegate_pSgvMZ",
+                "moduleName": "TheymesSdk",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "initialize",
+            "printedName": "initialize(token:domain:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)initializeWithToken:domain:",
+            "mangledName": "$s10TheymesSdk0A0C10initialize5token6domainySS_SStFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "initializeWithToken:domain:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "openSupport",
+            "printedName": "openSupport(config:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSDictionary?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSDictionary",
+                    "printedName": "Foundation.NSDictionary",
+                    "usr": "c:objc(cs)NSDictionary"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)openSupportWithConfig:",
+            "mangledName": "$s10TheymesSdk0A0C11openSupport6configySo12NSDictionaryCSg_tFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "openSupportWithConfig:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "openSupport",
+            "printedName": "openSupport()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)openSupport",
+            "mangledName": "$s10TheymesSdk0A0C11openSupportyyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "openSupport",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "openResource",
+            "printedName": "openResource(_:config:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSDictionary?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSDictionary",
+                    "printedName": "Foundation.NSDictionary",
+                    "usr": "c:objc(cs)NSDictionary"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)openResource:config:",
+            "mangledName": "$s10TheymesSdk0A0C12openResource_6configySS_So12NSDictionaryCSgtFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "openResource:config:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "openResource",
+            "printedName": "openResource(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)openResource:",
+            "mangledName": "$s10TheymesSdk0A0C12openResourceyySSFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "openResource:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "close",
+            "printedName": "close()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)close",
+            "mangledName": "$s10TheymesSdk0A0C5closeyyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "close",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getSdkVersion",
+            "printedName": "getSdkVersion()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)getSdkVersion",
+            "mangledName": "$s10TheymesSdk0A0C03getB7VersionSSyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "getSdkVersion",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isSupported",
+            "printedName": "isSupported()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)isSupported",
+            "mangledName": "$s10TheymesSdk0A0C11isSupportedSbyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "isSupported",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "requestNotificationPermission",
+            "printedName": "requestNotificationPermission()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)requestNotificationPermission",
+            "mangledName": "$s10TheymesSdk0A0C29requestNotificationPermissionyyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "requestNotificationPermission",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "enableNotifications",
+            "printedName": "enableNotifications()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)enableNotifications",
+            "mangledName": "$s10TheymesSdk0A0C19enableNotificationsyyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "enableNotifications",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "disableNotifications",
+            "printedName": "disableNotifications()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)disableNotifications",
+            "mangledName": "$s10TheymesSdk0A0C20disableNotificationsyyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "disableNotifications",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUnreadMessageCount",
+            "printedName": "getUnreadMessageCount()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)getUnreadMessageCount",
+            "mangledName": "$s10TheymesSdk0A0C21getUnreadMessageCountSiyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "getUnreadMessageCount",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUnansweredMessageCount",
+            "printedName": "getUnansweredMessageCount()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)getUnansweredMessageCount",
+            "mangledName": "$s10TheymesSdk0A0C25getUnansweredMessageCountSiyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "getUnansweredMessageCount",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "recordRetention",
+            "printedName": "recordRetention()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)recordRetention",
+            "mangledName": "$s10TheymesSdk0A0C15recordRetentionyyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "recordRetention",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reset",
+            "printedName": "reset()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)reset",
+            "mangledName": "$s10TheymesSdk0A0C5resetyyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "reset",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getLanguage",
+            "printedName": "getLanguage()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)getLanguage",
+            "mangledName": "$s10TheymesSdk0A0C11getLanguageSSSgyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "getLanguage",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setLanguage",
+            "printedName": "setLanguage(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)setLanguage:",
+            "mangledName": "$s10TheymesSdk0A0C11setLanguageyySSSgFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "setLanguage:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getSignedMetadataToken",
+            "printedName": "getSignedMetadataToken()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)getSignedMetadataToken",
+            "mangledName": "$s10TheymesSdk0A0C22getSignedMetadataTokenSSSgyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "getSignedMetadataToken",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setSignedMetadataToken",
+            "printedName": "setSignedMetadataToken(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)setSignedMetadataToken:",
+            "mangledName": "$s10TheymesSdk0A0C22setSignedMetadataTokenyySSSgFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "setSignedMetadataToken:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getPlayer",
+            "printedName": "getPlayer()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSDictionary?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSDictionary",
+                    "printedName": "Foundation.NSDictionary",
+                    "usr": "c:objc(cs)NSDictionary"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)getPlayer",
+            "mangledName": "$s10TheymesSdk0A0C9getPlayerSo12NSDictionaryCSgyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "getPlayer",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setPlayer",
+            "printedName": "setPlayer(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSDictionary?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSDictionary",
+                    "printedName": "Foundation.NSDictionary",
+                    "usr": "c:objc(cs)NSDictionary"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)setPlayer:",
+            "mangledName": "$s10TheymesSdk0A0C9setPlayeryySo12NSDictionaryCSgFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "setPlayer:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getTags",
+            "printedName": "getTags()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)getTags",
+            "mangledName": "$s10TheymesSdk0A0C7getTagsSaySSGyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "getTags",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setTags",
+            "printedName": "setTags(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)setTags:",
+            "mangledName": "$s10TheymesSdk0A0C7setTagsyySaySSGFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "setTags:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addTag",
+            "printedName": "addTag(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)addTag:",
+            "mangledName": "$s10TheymesSdk0A0C6addTagyySSFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "addTag:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addTags",
+            "printedName": "addTags(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)addTags:",
+            "mangledName": "$s10TheymesSdk0A0C7addTagsyySaySSGFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "addTags:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeTag",
+            "printedName": "removeTag(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)removeTag:",
+            "mangledName": "$s10TheymesSdk0A0C9removeTagyySSFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "removeTag:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeTags",
+            "printedName": "removeTags(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)removeTags:",
+            "mangledName": "$s10TheymesSdk0A0C10removeTagsyySaySSGFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "removeTags:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeAllTags",
+            "printedName": "removeAllTags()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)removeAllTags",
+            "mangledName": "$s10TheymesSdk0A0C13removeAllTagsyyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "removeAllTags",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getFields",
+            "printedName": "getFields()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)getFields",
+            "mangledName": "$s10TheymesSdk0A0C9getFieldsSDySSypGyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "getFields",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setFields",
+            "printedName": "setFields(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)setFields:",
+            "mangledName": "$s10TheymesSdk0A0C9setFieldsyySDySSypGFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "setFields:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addField",
+            "printedName": "addField(_:value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "Any"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)addField:value:",
+            "mangledName": "$s10TheymesSdk0A0C8addField_5valueySS_yptFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "addField:value:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addFields",
+            "printedName": "addFields(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)addFields:",
+            "mangledName": "$s10TheymesSdk0A0C9addFieldsyySDySSypGFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "addFields:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeField",
+            "printedName": "removeField(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)removeField:",
+            "mangledName": "$s10TheymesSdk0A0C11removeFieldyySSFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "removeField:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeFields",
+            "printedName": "removeFields(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)removeFields:",
+            "mangledName": "$s10TheymesSdk0A0C12removeFieldsyySaySSGFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "removeFields:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeAllFields",
+            "printedName": "removeAllFields()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)removeAllFields",
+            "mangledName": "$s10TheymesSdk0A0C15removeAllFieldsyyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "removeAllFields",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "enableLogging",
+            "printedName": "enableLogging()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)enableLogging",
+            "mangledName": "$s10TheymesSdk0A0C13enableLoggingyyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "enableLogging",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "disableLogging",
+            "printedName": "disableLogging()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)disableLogging",
+            "mangledName": "$s10TheymesSdk0A0C14disableLoggingyyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "disableLogging",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isYoungPlayer",
+            "printedName": "isYoungPlayer()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)isYoungPlayer",
+            "mangledName": "$s10TheymesSdk0A0C13isYoungPlayerSbyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "isYoungPlayer",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setYoungPlayer",
+            "printedName": "setYoungPlayer(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)setYoungPlayer:",
+            "mangledName": "$s10TheymesSdk0A0C14setYoungPlayeryySbFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "setYoungPlayer:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isPrivacyMode",
+            "printedName": "isPrivacyMode()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)isPrivacyMode",
+            "mangledName": "$s10TheymesSdk0A0C13isPrivacyModeSbyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "isPrivacyMode",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setPrivacyMode",
+            "printedName": "setPrivacyMode(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)setPrivacyMode:",
+            "mangledName": "$s10TheymesSdk0A0C14setPrivacyModeyySbFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "setPrivacyMode:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Theymes",
+                "printedName": "TheymesSdk.Theymes",
+                "usr": "c:@M@TheymesSdk@objc(cs)Theymes"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(im)init",
+            "mangledName": "$s10TheymesSdk0A0CACycfc",
+            "moduleName": "TheymesSdk",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@TheymesSdk@objc(cs)Theymes",
+        "mangledName": "$s10TheymesSdk0A0C",
+        "moduleName": "TheymesSdk",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SupportView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 473,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SupportView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 859,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SupportView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 863,
+      "length": 4,
+      "value": "1024"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SupportView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 870,
+      "length": 4,
+      "value": "1024"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SupportView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1130,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SupportView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1258,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SupportView.swift",
+      "kind": "StringLiteral",
+      "offset": 1846,
+      "length": 7,
+      "value": "\"light\""
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/OrientationState.swift",
+      "kind": "BooleanLiteral",
+      "offset": 119,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
+      "kind": "BooleanLiteral",
+      "offset": 308,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
+      "kind": "BooleanLiteral",
+      "offset": 335,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
+      "kind": "BooleanLiteral",
+      "offset": 366,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
+      "kind": "BooleanLiteral",
+      "offset": 405,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
+      "kind": "BooleanLiteral",
+      "offset": 430,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
+      "kind": "IntegerLiteral",
+      "offset": 737,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 217,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 287,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 338,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 389,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 444,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "Array",
+      "offset": 843,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "Dictionary",
+      "offset": 894,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 942,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 992,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1070,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "StringLiteral",
+      "offset": 1126,
+      "length": 17,
+      "value": "\"com.theymes.sdk\""
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "StringLiteral",
+      "offset": 1155,
+      "length": 12,
+      "value": "\"TheymesSdk\""
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "StringLiteral",
+      "offset": 1606,
+      "length": 32,
+      "value": "\"com.theymes.sdk.NetworkMonitor\""
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1685,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1757,
+      "length": 3,
+      "value": "300"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/responses\/SdkEventsResponse.swift",
+      "kind": "StringLiteral",
+      "offset": 94,
+      "length": 11,
+      "value": "\"OPEN_PAGE\""
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
+      "kind": "BooleanLiteral",
+      "offset": 80,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
+      "kind": "BooleanLiteral",
+      "offset": 115,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
+      "kind": "BooleanLiteral",
+      "offset": 154,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
+      "kind": "BooleanLiteral",
+      "offset": 200,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
+      "kind": "BooleanLiteral",
+      "offset": 233,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
+      "kind": "BooleanLiteral",
+      "offset": 591,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SdkSettingsFetcher.swift",
+      "kind": "BooleanLiteral",
+      "offset": 96,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SdkSettingsFetcher.swift",
+      "kind": "BooleanLiteral",
+      "offset": 135,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SdkSettingsFetcher.swift",
+      "kind": "BooleanLiteral",
+      "offset": 181,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SdkSettingsFetcher.swift",
+      "kind": "BooleanLiteral",
+      "offset": 222,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SdkSettingsFetcher.swift",
+      "kind": "IntegerLiteral",
+      "offset": 327,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SdkSettingsFetcher.swift",
+      "kind": "IntegerLiteral",
+      "offset": 358,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PortraitHostingController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 219,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PortraitHostingController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1191,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PortraitHostingController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1271,
+      "length": 5,
+      "value": "false"
+    }
+  ]
+}

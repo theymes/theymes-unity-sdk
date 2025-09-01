@@ -1,0 +1,28 @@
+{
+  "name": "com.theymes.sdk",
+  "version": "1.1.5",
+  "displayName": "Theymes SDK",
+  "description": "Theymes SDK for Unity",
+  "documentationUrl": "https://developers.theymes.com/category/unity-sdk",
+  "license": "See LICENSE file",
+  "licenseUrl": "https://github.com/theymes/theymes-unity-sdk/blob/main/LICENSE",
+  "changelogUrl": "https://github.com/theymes/theymes-unity-sdk/blob/main/CHANGELOG.md",
+  "dependencies": {},
+  "keywords": [
+    "theymes",
+    "sdk",
+    "unity",
+    "support",
+    "retention",
+    "analytics",
+    "insights",
+    "care",
+    "feedback",
+    "survey"
+  ],
+  "author": {
+    "name": "Theymes",
+    "email": "contact@theymes.com",
+    "url": "https://theymes.com"
+  }
+}

@@ -1,0 +1,11 @@
+framework module TheymesSdk {
+  umbrella header "TheymesSdk.h"
+  export *
+
+  module * { export * }
+}
+
+module TheymesSdk.Swift {
+  header "TheymesSdk-Swift.h"
+  requires objc
+}

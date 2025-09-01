@@ -1,0 +1,72 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name TheymesSdk
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
+import Combine
+import Foundation
+import Network
+import PhotosUI
+import Swift
+import SwiftUI
+@_exported import TheymesSdk
+import UIKit
+import UniformTypeIdentifiers
+import UserNotifications
+import WebKit
+import _Concurrency
+import _PhotosUI_SwiftUI
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+@objc public protocol TheymesDelegate {
+  @objc optional func didOpen()
+  @objc optional func didClose()
+  @objc optional func didUpdateUnreadMessageCount(_ count: Swift.Int)
+  @objc optional func didUpdateUnansweredMessageCount(_ count: Swift.Int)
+}
+@_inheritsConvenienceInitializers @objc public class Theymes : ObjectiveC.NSObject {
+  @objc weak public static var delegate: (any TheymesSdk.TheymesDelegate)?
+  @objc(initializeWithToken:domain:) public static func initialize(token: Swift.String, domain: Swift.String)
+  @objc(openSupportWithConfig:) public static func openSupport(config: Foundation.NSDictionary?)
+  @objc(openSupport) public static func openSupport()
+  @objc(openResource:config:) public static func openResource(_ resource: Swift.String, config: Foundation.NSDictionary?)
+  @objc(openResource:) public static func openResource(_ resource: Swift.String)
+  @objc(close) public static func close()
+  @objc(getSdkVersion) public static func getSdkVersion() -> Swift.String
+  @objc(isSupported) public static func isSupported() -> Swift.Bool
+  @objc(requestNotificationPermission) public static func requestNotificationPermission()
+  @objc(enableNotifications) public static func enableNotifications()
+  @objc(disableNotifications) public static func disableNotifications()
+  @objc(getUnreadMessageCount) public static func getUnreadMessageCount() -> Swift.Int
+  @objc(getUnansweredMessageCount) public static func getUnansweredMessageCount() -> Swift.Int
+  @objc(recordRetention) public static func recordRetention()
+  @objc(reset) public static func reset()
+  @objc(getLanguage) public static func getLanguage() -> Swift.String?
+  @objc(setLanguage:) public static func setLanguage(_ language: Swift.String?)
+  @objc(getSignedMetadataToken) public static func getSignedMetadataToken() -> Swift.String?
+  @objc(setSignedMetadataToken:) public static func setSignedMetadataToken(_ token: Swift.String?)
+  @objc(getPlayer) public static func getPlayer() -> Foundation.NSDictionary?
+  @objc(setPlayer:) public static func setPlayer(_ player: Foundation.NSDictionary?)
+  @objc(getTags) public static func getTags() -> [Swift.String]
+  @objc(setTags:) public static func setTags(_ tags: [Swift.String])
+  @objc(addTag:) public static func addTag(_ tag: Swift.String)
+  @objc(addTags:) public static func addTags(_ tags: [Swift.String])
+  @objc(removeTag:) public static func removeTag(_ tag: Swift.String)
+  @objc(removeTags:) public static func removeTags(_ tags: [Swift.String])
+  @objc(removeAllTags) public static func removeAllTags()
+  @objc(getFields) public static func getFields() -> [Swift.String : Any]
+  @objc(setFields:) public static func setFields(_ fields: [Swift.String : Any])
+  @objc(addField:value:) public static func addField(_ key: Swift.String, value: Any)
+  @objc(addFields:) public static func addFields(_ fields: [Swift.String : Any])
+  @objc(removeField:) public static func removeField(_ field: Swift.String)
+  @objc(removeFields:) public static func removeFields(_ fields: [Swift.String])
+  @objc(removeAllFields) public static func removeAllFields()
+  @objc(enableLogging) public static func enableLogging()
+  @objc(disableLogging) public static func disableLogging()
+  @objc(isYoungPlayer) public static func isYoungPlayer() -> Swift.Bool
+  @objc(setYoungPlayer:) public static func setYoungPlayer(_ youngPlayer: Swift.Bool)
+  @objc(isPrivacyMode) public static func isPrivacyMode() -> Swift.Bool
+  @objc(setPrivacyMode:) public static func setPrivacyMode(_ privacyMode: Swift.Bool)
+  @objc override dynamic public init()
+  @objc deinit
+}
