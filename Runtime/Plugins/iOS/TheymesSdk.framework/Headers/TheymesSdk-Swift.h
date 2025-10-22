@@ -308,7 +308,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @protocol TheymesDelegate;
 @class NSString;
 @class NSDictionary;
-SWIFT_CLASS("_TtC10TheymesSdk7Theymes")
+SWIFT_CLASS_NAMED("Theymes")
 @interface Theymes : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, weak) id <TheymesDelegate> _Nullable delegate;)
 + (id <TheymesDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
@@ -354,6 +354,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, weak) id <TheymesDelegate> _Nu
 + (void)setYoungPlayer:(BOOL)youngPlayer;
 + (BOOL)isPrivacyMode SWIFT_WARN_UNUSED_RESULT;
 + (void)setPrivacyMode:(BOOL)privacyMode;
++ (void)registerPushToken:(NSString * _Nonnull)pushToken type:(NSString * _Nonnull)type;
++ (BOOL)handlePendingNotificationAction:(NSDictionary * _Nullable)config SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)handlePendingNotificationAction SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

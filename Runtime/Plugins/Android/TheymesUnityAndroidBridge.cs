@@ -288,6 +288,21 @@ namespace Theymes
             bridgeClass.CallStatic("setPrivacyMode", privacyMode);
         }
 
+        public static void RegisterPushToken(string pushToken, string type)
+        {
+            bridgeClass.CallStatic("registerPushToken", pushToken, type);
+        }
+
+        public static void HandleNotification(bool opened, string dataJson)
+        {
+            bridgeClass.CallStatic("handleNotification", opened, dataJson);
+        }
+
+        public static bool HandlePendingNotificationAction(string configJson)
+        {
+            return bridgeClass.CallStatic<bool>("handlePendingNotificationAction", unityContext, configJson);
+        }
+
         public static void SetupEventListeners()
         {
             bridgeClass.CallStatic("setEventListener", new TheymesUnityAndroidBridgeEventListener());

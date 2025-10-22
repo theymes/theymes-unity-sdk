@@ -12,6 +12,13 @@
         "moduleName": "TheymesSdk"
       },
       {
+        "kind": "Import",
+        "name": "UserNotifications",
+        "printedName": "UserNotifications",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
         "kind": "TypeDecl",
         "name": "TheymesDelegate",
         "printedName": "TheymesDelegate",
@@ -259,6 +266,20 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -282,6 +303,13 @@
         "kind": "Import",
         "name": "Network",
         "printedName": "Network",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "UserNotifications",
+        "printedName": "UserNotifications",
         "declKind": "Import",
         "moduleName": "TheymesSdk"
       },
@@ -1688,6 +1716,106 @@
             "funcSelfKind": "NonMutating"
           },
           {
+            "kind": "Function",
+            "name": "registerPushToken",
+            "printedName": "registerPushToken(_:type:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)registerPushToken:type:",
+            "mangledName": "$s10TheymesSdk0A0C17registerPushToken_4typeySS_SStFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "registerPushToken:type:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "handlePendingNotificationAction",
+            "printedName": "handlePendingNotificationAction(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSDictionary?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSDictionary",
+                    "printedName": "Foundation.NSDictionary",
+                    "usr": "c:objc(cs)NSDictionary"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)handlePendingNotificationAction:",
+            "mangledName": "$s10TheymesSdk0A0C31handlePendingNotificationActionySbSo12NSDictionaryCSgFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "handlePendingNotificationAction:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "handlePendingNotificationAction",
+            "printedName": "handlePendingNotificationAction()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)handlePendingNotificationAction",
+            "mangledName": "$s10TheymesSdk0A0C31handlePendingNotificationActionSbyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "handlePendingNotificationAction",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
@@ -1718,6 +1846,7 @@
         "usr": "c:@M@TheymesSdk@objc(cs)Theymes",
         "mangledName": "$s10TheymesSdk0A0C",
         "moduleName": "TheymesSdk",
+        "objc_name": "Theymes",
         "declAttributes": [
           "AccessControl",
           "ObjC"
@@ -1900,6 +2029,34 @@
         "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreTelephony",
+        "printedName": "CoreTelephony",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Network",
+        "printedName": "Network",
+        "declKind": "Import",
+        "moduleName": "TheymesSdk"
       }
     ],
     "json_format_version": 8
@@ -2004,107 +2161,149 @@
       "value": "0"
     },
     {
-      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
       "kind": "BooleanLiteral",
-      "offset": 217,
+      "offset": 187,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
+      "kind": "BooleanLiteral",
+      "offset": 233,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
+      "kind": "IntegerLiteral",
+      "offset": 362,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
+      "kind": "IntegerLiteral",
+      "offset": 466,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
+      "kind": "BooleanLiteral",
+      "offset": 781,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
+      "kind": "BooleanLiteral",
+      "offset": 837,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "BooleanLiteral",
-      "offset": 287,
+      "offset": 251,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 325,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "BooleanLiteral",
+      "offset": 367,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "IntegerLiteral",
-      "offset": 338,
+      "offset": 418,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "IntegerLiteral",
-      "offset": 389,
+      "offset": 469,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "BooleanLiteral",
-      "offset": 444,
+      "offset": 524,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "Array",
-      "offset": 843,
+      "offset": 923,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "Dictionary",
-      "offset": 894,
+      "offset": 974,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "BooleanLiteral",
-      "offset": 942,
+      "offset": 1022,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "BooleanLiteral",
-      "offset": 992,
+      "offset": 1072,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "BooleanLiteral",
-      "offset": 1070,
+      "offset": 1150,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "StringLiteral",
-      "offset": 1126,
+      "offset": 1206,
       "length": 17,
       "value": "\"com.theymes.sdk\""
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "StringLiteral",
-      "offset": 1155,
+      "offset": 1235,
       "length": 12,
       "value": "\"TheymesSdk\""
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "StringLiteral",
-      "offset": 1606,
+      "offset": 1750,
       "length": 32,
       "value": "\"com.theymes.sdk.NetworkMonitor\""
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1685,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "IntegerLiteral",
-      "offset": 1757,
+      "offset": 1936,
       "length": 3,
       "value": "300"
     },
@@ -2149,13 +2348,6 @@
       "offset": 233,
       "length": 5,
       "value": "false"
-    },
-    {
-      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
-      "kind": "BooleanLiteral",
-      "offset": 591,
-      "length": 4,
-      "value": "true"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SdkSettingsFetcher.swift",

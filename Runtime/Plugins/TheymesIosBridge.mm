@@ -1,4 +1,5 @@
 #import "TheymesIosBridge.h"
+#import <UserNotifications/UserNotifications.h>
 #import <TheymesSdk/TheymesSdk-Swift.h>
 
 @interface TheymesIosBridgeDelegate : NSObject <TheymesDelegate>
@@ -305,6 +306,15 @@ bool TheymesIsPrivacyMode() {
 
 void TheymesSetPrivacyMode(bool privacyMode) {
     [Theymes setPrivacyMode:privacyMode];
+}
+
+void TheymesRegisterPushToken(const char *token, const char *type) {
+    [Theymes registerPushToken:cStringToNSString(token) type:cStringToNSString(type)];
+}
+
+bool TheymesHandlePendingNotificationAction(const char *config) {
+    NSDictionary *configDict = jsonStrPointerToNSDictionary(config);
+    return [Theymes handlePendingNotificationAction:configDict];
 }
 
 void TheymesOnOpen(OnOpenClose callback) {

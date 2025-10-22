@@ -135,7 +135,7 @@ namespace Theymes
             return list;
         }
 
-        public static SimpleJSON.JSONArray StringListToJsonArray(List<string> list)
+        public static SimpleJSON.JSONArray StringListToJsonArray(IList<string> list)
         {
             if (list == null)
             {
@@ -151,7 +151,7 @@ namespace Theymes
             return jsonArray;
         }
 
-        public static string StringListToJson(List<string> list)
+        public static string StringListToJson(IList<string> list)
         {
             SimpleJSON.JSONArray jsonArray = StringListToJsonArray(list);
             if (jsonArray == null)
@@ -233,7 +233,7 @@ namespace Theymes
             return dict;
         }
 
-        public static SimpleJSON.JSONObject DictionaryToJsonObject(Dictionary<string, object> dict)
+        public static SimpleJSON.JSONObject DictionaryToJsonObject<T>(IDictionary<string, T> dict)
         {
             if (dict == null)
             {
@@ -249,7 +249,7 @@ namespace Theymes
             return jsonObj;
         }
 
-        public static string DictionaryToJson(Dictionary<string, object> dict)
+        public static string DictionaryToJson<T>(IDictionary<string, T> dict)
         {
             SimpleJSON.JSONObject jsonObj = DictionaryToJsonObject(dict);
             if (jsonObj == null)

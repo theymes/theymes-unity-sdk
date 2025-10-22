@@ -29,6 +29,14 @@ namespace Theymes
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.Initialize(token, domain);
             #endif
+
+            SetFields(
+                new Dictionary<string, object>
+                {
+                    { "_unitySystemMemory", SystemInfo.systemMemorySize },
+                    { "_unityGraphicsMemory", SystemInfo.graphicsMemorySize },
+                }
+            );
         }
 
         public static void OpenSupport()
@@ -278,7 +286,7 @@ namespace Theymes
             #endif
         }
 
-        public static void SetTags(List<string> tags)
+        public static void SetTags(IList<string> tags)
         {
             #if UNITY_IOS && !UNITY_EDITOR
             TheymesUnityIosBridge.SetTags(TheymesJsonHelpers.StringListToJson(tags));
@@ -300,7 +308,7 @@ namespace Theymes
             #endif
         }
 
-        public static void AddTags(List<string> tags)
+        public static void AddTags(IList<string> tags)
         {
             #if UNITY_IOS && !UNITY_EDITOR
             TheymesUnityIosBridge.AddTags(TheymesJsonHelpers.StringListToJson(tags));
@@ -322,7 +330,7 @@ namespace Theymes
             #endif
         }
 
-        public static void RemoveTags(List<string> tags)
+        public static void RemoveTags(IList<string> tags)
         {
             #if UNITY_IOS && !UNITY_EDITOR
             TheymesUnityIosBridge.RemoveTags(TheymesJsonHelpers.StringListToJson(tags));
@@ -357,7 +365,7 @@ namespace Theymes
             #endif
         }
 
-        public static void SetFields(Dictionary<string, object> fields)
+        public static void SetFields(IDictionary<string, object> fields)
         {
             #if UNITY_IOS && !UNITY_EDITOR
             TheymesUnityIosBridge.SetFields(TheymesJsonHelpers.DictionaryToJson(fields));
@@ -379,7 +387,7 @@ namespace Theymes
             #endif
         }
 
-        public static void AddFields(Dictionary<string, object> fields)
+        public static void AddFields(IDictionary<string, object> fields)
         {
             #if UNITY_IOS && !UNITY_EDITOR
             TheymesUnityIosBridge.AddFields(TheymesJsonHelpers.DictionaryToJson(fields));
@@ -401,7 +409,7 @@ namespace Theymes
             #endif
         }
 
-        public static void RemoveFields(List<string> keys)
+        public static void RemoveFields(IList<string> keys)
         {
             #if UNITY_IOS && !UNITY_EDITOR
             TheymesUnityIosBridge.RemoveFields(TheymesJsonHelpers.StringListToJson(keys));
@@ -490,6 +498,60 @@ namespace Theymes
             TheymesUnityAndroidBridge.SetPrivacyMode(privacyMode);
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.SetPrivacyMode(privacyMode);
+            #endif
+        }
+
+        public static void RegisterPushToken(string token, string type)
+        {
+            #if UNITY_IOS && !UNITY_EDITOR
+            TheymesUnityIosBridge.RegisterPushToken(token, type);
+            #elif UNITY_ANDROID && !UNITY_EDITOR
+            TheymesUnityAndroidBridge.RegisterPushToken(token, type);
+            #endif
+        }
+
+        public static bool IsTheymesNotification(IDictionary<string, string> data)
+        {
+            if (data == null) {
+                return false;
+            }
+
+            if (!data.ContainsKey("source") || data["source"] != "theymes") {
+                return false;
+            }
+
+            if (!data.ContainsKey("id") || !data.ContainsKey("title") || !data.ContainsKey("body")) {
+                return false;
+            }
+
+            return true;
+        }
+
+        public static void HandleNotification(bool opened, IDictionary<string, string> data)
+        {
+            if (!IsTheymesNotification(data)) {
+                return;
+            }
+
+            // on iOS the notifications are automatically handled
+            #if UNITY_ANDROID && !UNITY_EDITOR
+            TheymesUnityAndroidBridge.HandleNotification(opened, TheymesJsonHelpers.DictionaryToJson(data));
+            #endif
+        }
+
+        public static bool HandlePendingNotificationAction()
+        {
+            return HandlePendingNotificationAction(null);
+        }
+
+        public static bool HandlePendingNotificationAction(TheymesConfig config)
+        {
+            #if UNITY_IOS && !UNITY_EDITOR
+            return TheymesUnityIosBridge.HandlePendingNotificationAction(TheymesJsonHelpers.ConfigToJson(config));
+            #elif UNITY_ANDROID && !UNITY_EDITOR
+            return TheymesUnityAndroidBridge.HandlePendingNotificationAction(TheymesJsonHelpers.ConfigToJson(config));
+            #else
+            return false;
             #endif
         }
 

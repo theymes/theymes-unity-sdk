@@ -57,6 +57,15 @@ public class TheymesSdkIosPostProcessBuild
         {
             project.AddBuildProperty(unityFrameworkTargetGuid, "FRAMEWORK_SEARCH_PATHS", frameworkSearchPath);
         }
+        string unityFrameworkLdRunpathSearchPaths = project.GetBuildPropertyForAnyConfig(unityFrameworkTargetGuid, "LD_RUNPATH_SEARCH_PATHS");
+        if (unityFrameworkLdRunpathSearchPaths == null || !unityFrameworkLdRunpathSearchPaths.Contains("@executable_path/Frameworks"))
+        {
+            project.AddBuildProperty(unityFrameworkTargetGuid, "LD_RUNPATH_SEARCH_PATHS", "@executable_path/Frameworks");
+        }
+        if (unityFrameworkLdRunpathSearchPaths == null || !unityFrameworkLdRunpathSearchPaths.Contains("@loader_path/Frameworks"))
+        {
+            project.AddBuildProperty(unityFrameworkTargetGuid, "LD_RUNPATH_SEARCH_PATHS", "@loader_path/Frameworks");
+        }
 
         // Embed the framework in the app bundle
         PBXProjectExtensions.AddFileToEmbedFrameworks(project, mainTargetGuid, frameworkGuid);
@@ -67,6 +76,9 @@ public class TheymesSdkIosPostProcessBuild
         {
             project.AddBuildProperty(mainTargetGuid, "LD_RUNPATH_SEARCH_PATHS", "@executable_path/Frameworks");
         }
+
+        project.SetBuildProperty(mainTargetGuid, "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES", "YES");
+        project.SetBuildProperty(unityFrameworkTargetGuid, "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES", "YES");
 
         // Write changes to the Xcode project
         project.WriteToFile(projectPath);
