@@ -202,6 +202,20 @@ public class TheymesAndroidBridge {
         TheymesSdk.setPrivacyMode(privacyMode);
     }
 
+    public static void registerPushToken(String pushToken, String type) {
+        TheymesSdk.registerPushToken(pushToken, type);
+    }
+
+    public static void handleNotification(boolean opened, String dataJson) {
+        Map<String, String> data = jsonStrToStrMap(dataJson);
+        TheymesSdk.handleNotification(opened, data);
+    }
+
+    public static boolean handlePendingNotificationAction(Context context, String configJson) {
+        TheymesConfig config = jsonStrToTheymesConfig(configJson);
+        return TheymesSdk.handlePendingNotificationAction(context, config);
+    }
+
     public static boolean getIsInForeground() {
         return TheymesSdk.getIsInForeground();
     }
@@ -294,6 +308,23 @@ public class TheymesAndroidBridge {
                 }
             } catch (JSONException e) {
                 Log.e("TheymesAndroidBridge", "Failed to parse JSON into Map<String, Object>: " + e.getMessage());
+            }
+        }
+        return map;
+    }
+
+    private static Map<String, String> jsonStrToStrMap(String jsonStr) {
+        Map<String, String> map = new HashMap<>();
+        if (jsonStr != null) {
+            try {
+                JSONObject jsonObject = new JSONObject(jsonStr);
+                Iterator<String> keys = jsonObject.keys();
+                while (keys.hasNext()) {
+                    String key = keys.next();
+                    map.put(key, jsonObject.getString(key));
+                }
+            } catch (JSONException e) {
+                Log.e("TheymesAndroidBridge", "Failed to parse JSON into Map<String, String>: " + e.getMessage());
             }
         }
         return map;

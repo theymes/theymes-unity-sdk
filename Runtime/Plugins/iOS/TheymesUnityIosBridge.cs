@@ -138,6 +138,12 @@ namespace Theymes
         private static extern void TheymesSetPrivacyMode(bool privacyMode);
 
         [DllImport("__Internal")]
+        private static extern void TheymesRegisterPushToken(string token, string type);
+
+        [DllImport("__Internal")]
+        private static extern bool TheymesHandlePendingNotificationAction(string config);
+
+        [DllImport("__Internal")]
         private static extern void TheymesOnOpen(Action callback);
 
         [DllImport("__Internal")]
@@ -358,6 +364,16 @@ namespace Theymes
         public static void SetPrivacyMode(bool privacyMode)
         {
             TheymesSetPrivacyMode(privacyMode);
+        }
+
+        public static void RegisterPushToken(string token, string type)
+        {
+            TheymesRegisterPushToken(token, type);
+        }
+
+        public static bool HandlePendingNotificationAction(string configJson)
+        {
+            return TheymesHandlePendingNotificationAction(configJson);
         }
 
         public static void SetupEventListeners()

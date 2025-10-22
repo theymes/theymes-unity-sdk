@@ -63,6 +63,9 @@ extern "C"
   bool TheymesIsPrivacyMode();
   void TheymesSetPrivacyMode(bool privacyMode);
 
+  void TheymesRegisterPushToken(const char *token, const char *type);
+  bool TheymesHandlePendingNotificationAction(const char *config);
+
   void TheymesOnOpen(OnOpenClose callback);
   void TheymesOnClose(OnOpenClose callback);
   void TheymesOnUnreadMessageCountUpdated(OnMessageCountUpdated callback);

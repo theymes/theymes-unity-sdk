@@ -3,6 +3,7 @@
 // swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name TheymesSdk
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
 import Combine
+import CoreTelephony
 import Foundation
 import Network
 import PhotosUI
@@ -24,7 +25,7 @@ import os
   @objc optional func didUpdateUnreadMessageCount(_ count: Swift.Int)
   @objc optional func didUpdateUnansweredMessageCount(_ count: Swift.Int)
 }
-@_inheritsConvenienceInitializers @objc public class Theymes : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc(Theymes) public class Theymes : ObjectiveC.NSObject {
   @objc weak public static var delegate: (any TheymesSdk.TheymesDelegate)?
   @objc(initializeWithToken:domain:) public static func initialize(token: Swift.String, domain: Swift.String)
   @objc(openSupportWithConfig:) public static func openSupport(config: Foundation.NSDictionary?)
@@ -67,6 +68,9 @@ import os
   @objc(setYoungPlayer:) public static func setYoungPlayer(_ youngPlayer: Swift.Bool)
   @objc(isPrivacyMode) public static func isPrivacyMode() -> Swift.Bool
   @objc(setPrivacyMode:) public static func setPrivacyMode(_ privacyMode: Swift.Bool)
+  @objc(registerPushToken:type:) public static func registerPushToken(_ pushToken: Swift.String, type: Swift.String)
+  @objc(handlePendingNotificationAction:) public static func handlePendingNotificationAction(_ config: Foundation.NSDictionary?) -> Swift.Bool
+  @objc(handlePendingNotificationAction) public static func handlePendingNotificationAction() -> Swift.Bool
   @objc override dynamic public init()
   @objc deinit
 }
