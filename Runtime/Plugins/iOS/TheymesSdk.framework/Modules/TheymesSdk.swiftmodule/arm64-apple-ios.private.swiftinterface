@@ -71,6 +71,7 @@ import os
   @objc(registerPushToken:type:) public static func registerPushToken(_ pushToken: Swift.String, type: Swift.String)
   @objc(handlePendingNotificationAction:) public static func handlePendingNotificationAction(_ config: Foundation.NSDictionary?) -> Swift.Bool
   @objc(handlePendingNotificationAction) public static func handlePendingNotificationAction() -> Swift.Bool
+  @objc(hasPendingNotificationAction) public static func hasPendingNotificationAction() -> Swift.Bool
   @objc override dynamic public init()
   @objc deinit
 }

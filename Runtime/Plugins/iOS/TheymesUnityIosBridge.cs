@@ -144,6 +144,9 @@ namespace Theymes
         private static extern bool TheymesHandlePendingNotificationAction(string config);
 
         [DllImport("__Internal")]
+        private static extern bool TheymesHasPendingNotificationAction();
+
+        [DllImport("__Internal")]
         private static extern void TheymesOnOpen(Action callback);
 
         [DllImport("__Internal")]
@@ -374,6 +377,11 @@ namespace Theymes
         public static bool HandlePendingNotificationAction(string configJson)
         {
             return TheymesHandlePendingNotificationAction(configJson);
+        }
+
+        public static bool HasPendingNotificationAction()
+        {
+            return TheymesHasPendingNotificationAction();
         }
 
         public static void SetupEventListeners()

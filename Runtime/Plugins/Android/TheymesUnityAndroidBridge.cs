@@ -303,6 +303,11 @@ namespace Theymes
             return bridgeClass.CallStatic<bool>("handlePendingNotificationAction", unityContext, configJson);
         }
 
+        public static bool HasPendingNotificationAction()
+        {
+            return bridgeClass.CallStatic<bool>("hasPendingNotificationAction");
+        }
+
         public static void SetupEventListeners()
         {
             bridgeClass.CallStatic("setEventListener", new TheymesUnityAndroidBridgeEventListener());

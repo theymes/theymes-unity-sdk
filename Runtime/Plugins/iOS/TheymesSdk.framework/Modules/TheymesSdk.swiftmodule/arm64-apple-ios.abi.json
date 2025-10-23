@@ -1816,6 +1816,31 @@
             "funcSelfKind": "NonMutating"
           },
           {
+            "kind": "Function",
+            "name": "hasPendingNotificationAction",
+            "printedName": "hasPendingNotificationAction()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)hasPendingNotificationAction",
+            "mangledName": "$s10TheymesSdk0A0C28hasPendingNotificationActionSbyFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "hasPendingNotificationAction",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
