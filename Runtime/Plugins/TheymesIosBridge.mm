@@ -317,6 +317,10 @@ bool TheymesHandlePendingNotificationAction(const char *config) {
     return [Theymes handlePendingNotificationAction:configDict];
 }
 
+bool TheymesHasPendingNotificationAction() {
+    return [Theymes hasPendingNotificationAction];
+}
+
 void TheymesOnOpen(OnOpenClose callback) {
     openCallback = callback;
 }

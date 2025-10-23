@@ -216,6 +216,10 @@ public class TheymesAndroidBridge {
         return TheymesSdk.handlePendingNotificationAction(context, config);
     }
 
+    public static boolean hasPendingNotificationAction() {
+        return TheymesSdk.hasPendingNotificationAction();
+    }
+
     public static boolean getIsInForeground() {
         return TheymesSdk.getIsInForeground();
     }

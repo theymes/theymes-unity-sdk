@@ -357,6 +357,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, weak) id <TheymesDelegate> _Nu
 + (void)registerPushToken:(NSString * _Nonnull)pushToken type:(NSString * _Nonnull)type;
 + (BOOL)handlePendingNotificationAction:(NSDictionary * _Nullable)config SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)handlePendingNotificationAction SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)hasPendingNotificationAction SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

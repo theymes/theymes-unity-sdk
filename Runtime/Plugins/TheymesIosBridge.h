@@ -65,6 +65,7 @@ extern "C"
 
   void TheymesRegisterPushToken(const char *token, const char *type);
   bool TheymesHandlePendingNotificationAction(const char *config);
+  bool TheymesHasPendingNotificationAction();
 
   void TheymesOnOpen(OnOpenClose callback);
   void TheymesOnClose(OnOpenClose callback);

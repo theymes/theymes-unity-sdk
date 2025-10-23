@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.1
+
+- Add support for checking if there is a pending notification action waiting: `TheymesSdk.HasPendingNotificationAction()`.
+
 ## 1.2.0
 
 - Add support for push notifications, new functions: `TheymesSdk.RegisterPushToken()`, `TheymesSdk.IsTheymesNotification()`, `TheymesSdk.HandleNotification()`, `TheymesSdk.HandlePendingNotificationAction()`.

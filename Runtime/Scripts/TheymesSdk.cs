@@ -555,6 +555,17 @@ namespace Theymes
             #endif
         }
 
+        public static bool HasPendingNotificationAction()
+        {
+            #if UNITY_IOS && !UNITY_EDITOR
+            return TheymesUnityIosBridge.HasPendingNotificationAction();
+            #elif UNITY_ANDROID && !UNITY_EDITOR
+            return TheymesUnityAndroidBridge.HasPendingNotificationAction();
+            #else
+            return false;
+            #endif
+        }
+
         private static void _SetupEventListeners()
         {
             #if UNITY_IOS && !UNITY_EDITOR
