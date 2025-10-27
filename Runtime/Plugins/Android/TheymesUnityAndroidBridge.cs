@@ -8,6 +8,7 @@ namespace Theymes
     [Preserve]
     internal class TheymesUnityAndroidBridgeEventListener : AndroidJavaProxy
     {
+        [Preserve]
         public TheymesUnityAndroidBridgeEventListener() : base("com.theymes.sdk.android.TheymesEventListener") { }
 
         [Preserve]
