@@ -20,6 +20,8 @@ namespace Theymes
                 return;
             }
 
+            isInitialized = true;
+
             _SetupEventListeners();
 
             #if UNITY_IOS && !UNITY_EDITOR

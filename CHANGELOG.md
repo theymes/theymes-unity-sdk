@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.2
+
+- Add support for Android devices down to Android 6.0 (API level 23).
+
 ## 1.2.1
 
 - Add support for checking if there is a pending notification action waiting: `TheymesSdk.HasPendingNotificationAction()`.

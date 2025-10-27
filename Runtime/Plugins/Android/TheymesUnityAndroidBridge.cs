@@ -1,28 +1,34 @@
 #if UNITY_ANDROID && !UNITY_EDITOR
 using System;
 using UnityEngine;
+using UnityEngine.Scripting;
 
 namespace Theymes
 {
+    [Preserve]
     internal class TheymesUnityAndroidBridgeEventListener : AndroidJavaProxy
     {
         public TheymesUnityAndroidBridgeEventListener() : base("com.theymes.sdk.android.TheymesEventListener") { }
 
+        [Preserve]
         public void onOpen()
         {
             TheymesUnityAndroidBridge.TriggerOnOpen();
         }
         
+        [Preserve]
         public void onClose()
         {
             TheymesUnityAndroidBridge.TriggerOnClose();
         }
 
+        [Preserve]
         public void onUpdateUnreadMessageCount(int count)
         {
             TheymesUnityAndroidBridge.TriggerUnreadMessageCountUpdated(count);
         }
 
+        [Preserve]
         public void onUpdateUnansweredMessageCount(int count)
         {
             TheymesUnityAndroidBridge.TriggerUnansweredMessageCountUpdated(count);
@@ -38,6 +44,7 @@ namespace Theymes
 
         private static AndroidJavaObject unityContext;
         private static AndroidJavaClass bridgeClass;
+        private static TheymesUnityAndroidBridgeEventListener listener;
 
         static TheymesUnityAndroidBridge()
         {
@@ -150,7 +157,7 @@ namespace Theymes
 
         public static void RecordRetention()
         {
-            bridgeClass.CallStatic<int>("recordRetention");
+            bridgeClass.CallStatic("recordRetention");
         }
 
         public static void Reset()
@@ -310,7 +317,12 @@ namespace Theymes
 
         public static void SetupEventListeners()
         {
-            bridgeClass.CallStatic("setEventListener", new TheymesUnityAndroidBridgeEventListener());
+            if (listener != null) {
+                return;
+            }
+
+            listener = new TheymesUnityAndroidBridgeEventListener();
+            bridgeClass.CallStatic("setEventListener", listener);
         }
 
         public static void TriggerOnOpen()
