@@ -166,7 +166,12 @@ namespace Theymes
         {
             if (value is string str)
                 return new SimpleJSON.JSONString(str);
-            else if (value is double || value is float || value is int)
+            else if (value is int || value is uint
+                    || value is float || value is double
+                    || value is decimal
+                    || value is long || value is ulong
+                    || value is short || value is ushort
+                    || value is sbyte || value is byte)
                 return new SimpleJSON.JSONNumber(Convert.ToDouble(value));
             else if (value is bool b)
                 return new SimpleJSON.JSONBool(b);
