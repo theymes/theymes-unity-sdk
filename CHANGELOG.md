@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.3
+
+- Fix a bug where long and ulong custom fields were dropped.
+
 ## 1.2.2
 
 - Add support for Android devices down to Android 6.0 (API level 23).
