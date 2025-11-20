@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.4
+
+- Fix a bug where the iOS SDK would show push notifications while game is on foreground if there are no other delegate to handle foreground push notifications installed.
+
 ## 1.2.3
 
 - Fix a bug where long and ulong custom fields were dropped.
