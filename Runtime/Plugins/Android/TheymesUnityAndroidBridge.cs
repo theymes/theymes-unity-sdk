@@ -90,9 +90,9 @@ namespace Theymes
             }
         }
 
-        public static void Initialize(string token, string domain)
+        public static void Initialize(string token, string domain, string optionsJson)
         {
-            bridgeClass.CallStatic("initialize", unityContext, token, domain);
+            bridgeClass.CallStatic("initialize", unityContext, token, domain, optionsJson);
             SetupLifecycleHandler();
         }
 

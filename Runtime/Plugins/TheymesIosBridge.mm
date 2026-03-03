@@ -110,7 +110,7 @@ const char *nsArrayToJsonCString(NSArray *array) {
     return [jsonString UTF8String];
 }
 
-void TheymesInitializeWithToken(const char *token, const char *domain) {
+void TheymesInitialize(const char *token, const char *domain, const char *optionsJson) {
     NSString *tokenString = [NSString stringWithUTF8String:token];
     NSString *domainString = [NSString stringWithUTF8String:domain];
 
@@ -119,7 +119,12 @@ void TheymesInitializeWithToken(const char *token, const char *domain) {
         [Theymes setDelegate:delegate];
     }
 
-    [Theymes initializeWithToken:tokenString domain:domainString];
+    NSDictionary *options = nil;
+    if (optionsJson != NULL) {
+        NSString *optionsStr = [NSString stringWithUTF8String:optionsJson];
+        options = jsonStrPointerToNSDictionary(optionsJson);
+    }
+    [Theymes initializeWithToken:tokenString domain:domainString options:options];
 }
 
 void TheymesOpenSupport() {
@@ -309,7 +314,7 @@ void TheymesSetPrivacyMode(bool privacyMode) {
 }
 
 void TheymesRegisterPushToken(const char *token, const char *type) {
-    [Theymes registerPushToken:cStringToNSString(token) type:cStringToNSString(type)];
+    [Theymes registerPushToken:cStringToNSString(token) typeString:cStringToNSString(type)];
 }
 
 bool TheymesHandlePendingNotificationAction(const char *config) {

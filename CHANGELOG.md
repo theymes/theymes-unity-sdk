@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.3.0
+
+- Add optional `InitializeOptions` parameter to `TheymesSdk.Initialize()` for configuring various options.
+  - `InitializeOptions.apiDomain`: Allow overriding the API domain the SDK uses. Normally you do not need to touch this.
+  - `InitializeOptions.android.orientation`: Allow overriding the orientation of the support center for Android. Use the `Orientation` constants (`Orientation.Portrait`, `Orientation.Landscape`, `Orientation.Unspecified`).
+  - `InitializeOptions.web.canvasSelector`: Custom CSS selector for the canvas element (e.g. `#gameCanvas`). Use when you need to specify a custom selector for your game canvas.
+  - `InitializeOptions.web.nonce`: Nonce string for Content Security Policy (CSP) compatibility. Pass the same nonce used in your CSP `script-src` and `style-src` directives.
+- Reduce the number of API calls the SDK makes in the background, making it less chatty.
+- Improve push token handling for devices that are used by multiple users.
+- Fix a bug for Android on certain devices when opening the support center while in landscape, the support center renders in incorrect size if forced to be in portrait mode.
+
 ## 1.2.4
 
 - Fix a bug where the iOS SDK would show push notifications while game is on foreground if there are no other delegate to handle foreground push notifications installed.

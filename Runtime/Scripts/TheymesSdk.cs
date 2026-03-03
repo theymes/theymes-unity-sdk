@@ -14,6 +14,11 @@ namespace Theymes
 
         public static void Initialize(string token, string domain)
         {
+            Initialize(token, domain, null);
+        }
+
+        public static void Initialize(string token, string domain, InitializeOptions options)
+        {
             // never initialize more than once
             if (isInitialized)
             {
@@ -25,11 +30,14 @@ namespace Theymes
             _SetupEventListeners();
 
             #if UNITY_IOS && !UNITY_EDITOR
-            TheymesUnityIosBridge.Initialize(token, domain);
+            var optionsJson = TheymesJsonHelpers.InitializeIosOptionsToJson(options);
+            TheymesUnityIosBridge.Initialize(token, domain, optionsJson);
             #elif UNITY_ANDROID && !UNITY_EDITOR
-            TheymesUnityAndroidBridge.Initialize(token, domain);
+            var optionsJson = TheymesJsonHelpers.InitializeAndroidOptionsToJson(options);
+            TheymesUnityAndroidBridge.Initialize(token, domain, optionsJson);
             #elif UNITY_WEBGL && !UNITY_EDITOR
-            TheymesUnityWebGLBridge.Initialize(token, domain);
+            var optionsJson = TheymesJsonHelpers.InitializeWebOptionsToJson(options);
+            TheymesUnityWebGLBridge.Initialize(token, domain, optionsJson);
             #endif
 
             SetFields(

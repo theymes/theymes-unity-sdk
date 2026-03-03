@@ -305,15 +305,22 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
+typedef SWIFT_ENUM(NSInteger, PushTokenType, open) {
+  PushTokenTypeApns = 1,
+  PushTokenTypeFcm = 2,
+};
+
 @protocol TheymesDelegate;
 @class NSString;
 @class NSDictionary;
+@class NSData;
 SWIFT_CLASS_NAMED("Theymes")
 @interface Theymes : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, weak) id <TheymesDelegate> _Nullable delegate;)
 + (id <TheymesDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
 + (void)setDelegate:(id <TheymesDelegate> _Nullable)value;
 + (void)initializeWithToken:(NSString * _Nonnull)token domain:(NSString * _Nonnull)domain;
++ (void)initializeWithToken:(NSString * _Nonnull)token domain:(NSString * _Nonnull)domain options:(NSDictionary * _Nullable)options;
 + (void)openSupportWithConfig:(NSDictionary * _Nullable)config;
 + (void)openSupport;
 + (void)openResource:(NSString * _Nonnull)resource config:(NSDictionary * _Nullable)config;
@@ -354,7 +361,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, weak) id <TheymesDelegate> _Nu
 + (void)setYoungPlayer:(BOOL)youngPlayer;
 + (BOOL)isPrivacyMode SWIFT_WARN_UNUSED_RESULT;
 + (void)setPrivacyMode:(BOOL)privacyMode;
-+ (void)registerPushToken:(NSString * _Nonnull)pushToken type:(NSString * _Nonnull)type;
++ (void)registerPushToken:(NSString * _Nonnull)pushToken type:(enum PushTokenType)type;
+/// Registers a device push token from raw token data (e.g. from <code>didRegisterForRemoteNotificationsWithDeviceToken</code>).
+/// Converts the data to hex string internally. Pass empty data to no-op.
++ (void)registerPushTokenWithDeviceToken:(NSData * _Nonnull)deviceToken type:(enum PushTokenType)type;
++ (void)registerPushToken:(NSString * _Nonnull)pushToken typeString:(NSString * _Nonnull)typeString;
 + (BOOL)handlePendingNotificationAction:(NSDictionary * _Nullable)config SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)handlePendingNotificationAction SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)hasPendingNotificationAction SWIFT_WARN_UNUSED_RESULT;

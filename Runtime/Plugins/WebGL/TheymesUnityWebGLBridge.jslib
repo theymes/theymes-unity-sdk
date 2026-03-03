@@ -1,8 +1,32 @@
 mergeInto(LibraryManager.library, {
-  TheymesInitialize: function(token, domain) {
+  TheymesInitialize: function(token, domain, optionsJson) {
     try {
-      var element = document.querySelector("#unity-canvas") || document.querySelector("#unityCanvas") || document.querySelector("canvas");
-      window.theymes.initialize(UTF8ToString(token), UTF8ToString(domain), { mode: 'game', element });
+      var options = (function() {
+        var opts = { mode: 'game' };
+        var element;
+
+        if (optionsJson && optionsJson !== 0) {
+          var parsed = JSON.parse(UTF8ToString(optionsJson));
+          if (parsed.apiDomain) {
+            opts.apiDomain = parsed.apiDomain;
+          }
+          if (parsed.canvasSelector) {
+            element = document.querySelector(parsed.canvasSelector);
+          }
+          if (parsed.nonce) {
+            opts.nonce = parsed.nonce;
+          }
+        }
+
+        if (!element) {
+          element = document.querySelector("#unity-canvas") || document.querySelector("#unityCanvas") || document.querySelector("canvas");
+        }
+
+        opts.element = element;
+        return opts;
+      })();
+
+      window.theymes.initialize(UTF8ToString(token), UTF8ToString(domain), options);
     } catch (error) {
       console.error("TheymesSdk.Initialize() failed", error);
     }

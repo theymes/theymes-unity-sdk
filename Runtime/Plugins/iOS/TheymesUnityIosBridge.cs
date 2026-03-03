@@ -15,7 +15,7 @@ namespace Theymes
         public static event System.Action<int> onUnansweredMessageCountUpdated;
 
         [DllImport("__Internal")]
-        private static extern void TheymesInitializeWithToken(string token, string domain);
+        private static extern void TheymesInitialize(string token, string domain, string optionsJson);
 
         [DllImport("__Internal")]
         private static extern void TheymesOpenSupport();
@@ -158,9 +158,9 @@ namespace Theymes
         [DllImport("__Internal")]
         private static extern void TheymesOnUnansweredMessageCountUpdated(Action<int> callback);
 
-        public static void Initialize(string token, string domain)
+        public static void Initialize(string token, string domain, string optionsJson)
         {
-            TheymesInitializeWithToken(token, domain);
+            TheymesInitialize(token, domain, optionsJson);
         }
 
         public static void OpenSupport()
