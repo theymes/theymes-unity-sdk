@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 - Reduce the number of API calls the SDK makes in the background, making it less chatty.
 - Improve push token handling for devices that are used by multiple users.
 - Fix a bug for Android on certain devices when opening the support center while in landscape, the support center renders in incorrect size if forced to be in portrait mode.
+- Fix a bug on iOS that automatically opens YouTube videos in browser or YouTube app and won't allow playback inside the SDK.
 
 ## 1.2.4
 

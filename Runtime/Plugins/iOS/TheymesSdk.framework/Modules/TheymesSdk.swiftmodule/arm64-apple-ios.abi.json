@@ -2581,15 +2581,22 @@
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
+      "kind": "StringLiteral",
+      "offset": 691,
+      "length": 38,
+      "value": "\"com.theymes.sdk.ios.pushTokenSentAt.\""
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
       "kind": "BooleanLiteral",
-      "offset": 1015,
+      "offset": 1076,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
       "kind": "BooleanLiteral",
-      "offset": 1071,
+      "offset": 1132,
       "length": 5,
       "value": "false"
     },
