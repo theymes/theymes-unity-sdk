@@ -9,7 +9,7 @@ extern "C"
   typedef void (*OnOpenClose)(void);
   typedef void (*OnMessageCountUpdated)(long count);
 
-  void TheymesInitializeWithToken(const char *token, const char *domain);
+  void TheymesInitialize(const char *token, const char *domain, const char *optionsJson);
 
   void TheymesOpenSupport();
   void TheymesOpenSupportWithConfig(const char *config);

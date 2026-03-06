@@ -264,5 +264,92 @@ namespace Theymes
 
             return jsonObj.ToString();
         }
+
+        public static SimpleJSON.JSONObject InitializeWebOptionsToJsonObject(InitializeOptions options)
+        {
+            if (options == null)
+            {
+                return null;
+            }
+
+            var jsonObj = new SimpleJSON.JSONObject();
+            if (options.apiDomain != null)
+            {
+                jsonObj["apiDomain"] = options.apiDomain;
+            }
+
+            if (options.web != null)
+            {
+                if (options.web.canvasSelector != null)
+                {
+                    jsonObj["canvasSelector"] = options.web.canvasSelector;
+                }
+
+                if (options.web.nonce != null)
+                {
+                    jsonObj["nonce"] = options.web.nonce;
+                }
+            }
+
+            return jsonObj;
+        }
+
+        public static string InitializeWebOptionsToJson(InitializeOptions options)
+        {
+            SimpleJSON.JSONObject jsonObj = InitializeWebOptionsToJsonObject(options);
+            return jsonObj == null || jsonObj.Count == 0 ? null : jsonObj.ToString();
+        }
+
+        public static SimpleJSON.JSONObject InitializeIosOptionsToJsonObject(InitializeOptions options)
+        {
+            if (options == null)
+            {
+                return null;
+            }
+
+            var jsonObj = new SimpleJSON.JSONObject();
+            if (options.apiDomain != null)
+            {
+                jsonObj["apiDomain"] = options.apiDomain;
+            }
+
+            return jsonObj;
+        }
+
+        public static string InitializeIosOptionsToJson(InitializeOptions options)
+        {
+            SimpleJSON.JSONObject jsonObj = InitializeIosOptionsToJsonObject(options);
+            return jsonObj == null || jsonObj.Count == 0 ? null : jsonObj.ToString();
+        }
+
+        public static SimpleJSON.JSONObject InitializeAndroidOptionsToJsonObject(InitializeOptions options)
+        {
+            if (options == null)
+            {
+                return null;
+            }
+
+            var jsonObj = new SimpleJSON.JSONObject();
+            if (options.apiDomain != null)
+            {
+                jsonObj["apiDomain"] = options.apiDomain;
+            }
+
+            if (options.android != null)
+            {
+                if (options.android.orientation.HasValue)
+                {
+                    jsonObj["orientation"] = options.android.orientation.Value;
+                }
+            }
+
+            return jsonObj;
+        }
+
+        public static string InitializeAndroidOptionsToJson(InitializeOptions options)
+        {
+            SimpleJSON.JSONObject jsonObj = InitializeAndroidOptionsToJsonObject(options);
+            return jsonObj == null || jsonObj.Count == 0 ? null : jsonObj.ToString();
+        }
     }
 }

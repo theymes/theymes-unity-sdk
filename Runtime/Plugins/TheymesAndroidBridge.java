@@ -17,11 +17,13 @@ import com.theymes.sdk.android.TheymesSdk;
 import com.theymes.sdk.android.TheymesEventListener;
 import com.theymes.sdk.android.TheymesPlayer;
 import com.theymes.sdk.android.TheymesConfig;
+import com.theymes.sdk.android.InitializeOptions;
 
 public class TheymesAndroidBridge {
 
-    public static void initialize(Context context, String token, String domain) {
-        TheymesSdk.initialize(context, token, domain);
+    public static void initialize(Context context, String token, String domain, String optionsJson) {
+        InitializeOptions options = jsonStrToInitializeOptions(optionsJson);
+        TheymesSdk.initialize(context, token, domain, options);
     }
 
     public static void setEventListener(TheymesEventListener eventListener) {
@@ -229,6 +231,20 @@ public class TheymesAndroidBridge {
     }
 
     // Helper methods
+    private static InitializeOptions jsonStrToInitializeOptions(String jsonStr) {
+        if (jsonStr == null || jsonStr.isEmpty()) return null;
+        try {
+            JSONObject json = new JSONObject(jsonStr);
+            InitializeOptions options = new InitializeOptions();
+            if (json.has("apiDomain")) options.setApiDomain(json.optString("apiDomain"));
+            if (json.has("orientation")) options.setOrientation(json.getInt("orientation"));
+            return options;
+        } catch (JSONException e) {
+            Log.e("TheymesAndroidBridge", "Failed to parse InitializeOptions: " + e.getMessage());
+            return null;
+        }
+    }
+
     private static TheymesConfig jsonStrToTheymesConfig(String jsonStr) {
         if (jsonStr == null || jsonStr.isEmpty()) {
             return null;

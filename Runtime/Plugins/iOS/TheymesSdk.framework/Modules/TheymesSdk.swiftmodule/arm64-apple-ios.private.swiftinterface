@@ -25,9 +25,19 @@ import os
   @objc optional func didUpdateUnreadMessageCount(_ count: Swift.Int)
   @objc optional func didUpdateUnansweredMessageCount(_ count: Swift.Int)
 }
+@objc public enum PushTokenType : Swift.Int {
+  case apns = 1
+  case fcm = 2
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @_inheritsConvenienceInitializers @objc(Theymes) public class Theymes : ObjectiveC.NSObject {
   @objc weak public static var delegate: (any TheymesSdk.TheymesDelegate)?
   @objc(initializeWithToken:domain:) public static func initialize(token: Swift.String, domain: Swift.String)
+  @objc(initializeWithToken:domain:options:) public static func initialize(token: Swift.String, domain: Swift.String, options: Foundation.NSDictionary?)
   @objc(openSupportWithConfig:) public static func openSupport(config: Foundation.NSDictionary?)
   @objc(openSupport) public static func openSupport()
   @objc(openResource:config:) public static func openResource(_ resource: Swift.String, config: Foundation.NSDictionary?)
@@ -68,10 +78,15 @@ import os
   @objc(setYoungPlayer:) public static func setYoungPlayer(_ youngPlayer: Swift.Bool)
   @objc(isPrivacyMode) public static func isPrivacyMode() -> Swift.Bool
   @objc(setPrivacyMode:) public static func setPrivacyMode(_ privacyMode: Swift.Bool)
-  @objc(registerPushToken:type:) public static func registerPushToken(_ pushToken: Swift.String, type: Swift.String)
+  @objc(registerPushToken:type:) public static func registerPushToken(_ pushToken: Swift.String, type: TheymesSdk.PushTokenType)
+  @objc(registerPushTokenWithDeviceToken:type:) public static func registerPushToken(_ deviceToken: Foundation.Data, type: TheymesSdk.PushTokenType)
+  @objc(registerPushToken:typeString:) public static func registerPushToken(_ pushToken: Swift.String, typeString: Swift.String)
   @objc(handlePendingNotificationAction:) public static func handlePendingNotificationAction(_ config: Foundation.NSDictionary?) -> Swift.Bool
   @objc(handlePendingNotificationAction) public static func handlePendingNotificationAction() -> Swift.Bool
   @objc(hasPendingNotificationAction) public static func hasPendingNotificationAction() -> Swift.Bool
   @objc override dynamic public init()
   @objc deinit
 }
+extension TheymesSdk.PushTokenType : Swift.Equatable {}
+extension TheymesSdk.PushTokenType : Swift.Hashable {}
+extension TheymesSdk.PushTokenType : Swift.RawRepresentable {}

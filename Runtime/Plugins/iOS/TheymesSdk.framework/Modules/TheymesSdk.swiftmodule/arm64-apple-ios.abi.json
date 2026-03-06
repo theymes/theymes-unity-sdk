@@ -279,6 +279,228 @@
         "moduleName": "TheymesSdk"
       },
       {
+        "kind": "TypeDecl",
+        "name": "PushTokenType",
+        "printedName": "PushTokenType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "apns",
+            "printedName": "apns",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TheymesSdk.PushTokenType.Type) -> TheymesSdk.PushTokenType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PushTokenType",
+                    "printedName": "TheymesSdk.PushTokenType",
+                    "usr": "c:@M@TheymesSdk@E@PushTokenType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TheymesSdk.PushTokenType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PushTokenType",
+                        "printedName": "TheymesSdk.PushTokenType",
+                        "usr": "c:@M@TheymesSdk@E@PushTokenType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@TheymesSdk@E@PushTokenType@PushTokenTypeApns",
+            "mangledName": "$s10TheymesSdk13PushTokenTypeO4apnsyA2CmF",
+            "moduleName": "TheymesSdk",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "fcm",
+            "printedName": "fcm",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TheymesSdk.PushTokenType.Type) -> TheymesSdk.PushTokenType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PushTokenType",
+                    "printedName": "TheymesSdk.PushTokenType",
+                    "usr": "c:@M@TheymesSdk@E@PushTokenType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TheymesSdk.PushTokenType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PushTokenType",
+                        "printedName": "TheymesSdk.PushTokenType",
+                        "usr": "c:@M@TheymesSdk@E@PushTokenType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@TheymesSdk@E@PushTokenType@PushTokenTypeFcm",
+            "mangledName": "$s10TheymesSdk13PushTokenTypeO3fcmyA2CmF",
+            "moduleName": "TheymesSdk",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "TheymesSdk.PushTokenType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PushTokenType",
+                    "printedName": "TheymesSdk.PushTokenType",
+                    "usr": "c:@M@TheymesSdk@E@PushTokenType"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10TheymesSdk13PushTokenTypeO8rawValueACSgSi_tcfc",
+            "mangledName": "$s10TheymesSdk13PushTokenTypeO8rawValueACSgSi_tcfc",
+            "moduleName": "TheymesSdk",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10TheymesSdk13PushTokenTypeO8rawValueSivp",
+            "mangledName": "$s10TheymesSdk13PushTokenTypeO8rawValueSivp",
+            "moduleName": "TheymesSdk",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10TheymesSdk13PushTokenTypeO8rawValueSivg",
+                "mangledName": "$s10TheymesSdk13PushTokenTypeO8rawValueSivg",
+                "moduleName": "TheymesSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@TheymesSdk@E@PushTokenType",
+        "mangledName": "$s10TheymesSdk13PushTokenTypeO",
+        "moduleName": "TheymesSdk",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
@@ -479,6 +701,56 @@
               "AccessControl",
               "ObjC",
               "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "initialize",
+            "printedName": "initialize(token:domain:options:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSDictionary?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSDictionary",
+                    "printedName": "Foundation.NSDictionary",
+                    "usr": "c:objc(cs)NSDictionary"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)initializeWithToken:domain:options:",
+            "mangledName": "$s10TheymesSdk0A0C10initialize5token6domain7optionsySS_SSSo12NSDictionaryCSgtFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "initializeWithToken:domain:options:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -1733,17 +2005,90 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "PushTokenType",
+                "printedName": "TheymesSdk.PushTokenType",
+                "usr": "c:@M@TheymesSdk@E@PushTokenType"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)registerPushToken:type:",
+            "mangledName": "$s10TheymesSdk0A0C17registerPushToken_4typeySS_AA0dE4TypeOtFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "registerPushToken:type:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "registerPushToken",
+            "printedName": "registerPushToken(_:type:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PushTokenType",
+                "printedName": "TheymesSdk.PushTokenType",
+                "usr": "c:@M@TheymesSdk@E@PushTokenType"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)registerPushTokenWithDeviceToken:type:",
+            "mangledName": "$s10TheymesSdk0A0C17registerPushToken_4typey10Foundation4DataV_AA0dE4TypeOtFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "registerPushTokenWithDeviceToken:type:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "registerPushToken",
+            "printedName": "registerPushToken(_:typeString:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)registerPushToken:type:",
-            "mangledName": "$s10TheymesSdk0A0C17registerPushToken_4typeySS_SStFZ",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)registerPushToken:typeString:",
+            "mangledName": "$s10TheymesSdk0A0C17registerPushToken_10typeStringySS_SStFZ",
             "moduleName": "TheymesSdk",
             "static": true,
-            "objc_name": "registerPushToken:type:",
+            "objc_name": "registerPushToken:typeString:",
             "declAttributes": [
               "Final",
               "AccessControl",
@@ -2145,22 +2490,22 @@
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
+      "kind": "IntegerLiteral",
+      "offset": 114,
+      "length": 5,
+      "value": "86400"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
       "kind": "BooleanLiteral",
-      "offset": 308,
+      "offset": 347,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
       "kind": "BooleanLiteral",
-      "offset": 335,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
-      "kind": "BooleanLiteral",
-      "offset": 366,
+      "offset": 374,
       "length": 5,
       "value": "false"
     },
@@ -2168,64 +2513,106 @@
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
       "kind": "BooleanLiteral",
       "offset": 405,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
+      "kind": "BooleanLiteral",
+      "offset": 444,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
       "kind": "BooleanLiteral",
-      "offset": 430,
+      "offset": 469,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
       "kind": "IntegerLiteral",
-      "offset": 737,
+      "offset": 584,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
+      "kind": "BooleanLiteral",
+      "offset": 658,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/RetentionTracker.swift",
+      "kind": "IntegerLiteral",
+      "offset": 886,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
       "kind": "BooleanLiteral",
-      "offset": 187,
+      "offset": 193,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
       "kind": "BooleanLiteral",
-      "offset": 233,
+      "offset": 239,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
       "kind": "IntegerLiteral",
-      "offset": 362,
+      "offset": 302,
+      "length": 5,
+      "value": "86400"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
+      "kind": "IntegerLiteral",
+      "offset": 443,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
+      "kind": "StringLiteral",
+      "offset": 691,
+      "length": 38,
+      "value": "\"com.theymes.sdk.ios.pushTokenSentAt.\""
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1076,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1132,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 55,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenType.swift",
       "kind": "IntegerLiteral",
-      "offset": 466,
+      "offset": 73,
       "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
-      "kind": "BooleanLiteral",
-      "offset": 781,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PushTokenSender.swift",
-      "kind": "BooleanLiteral",
-      "offset": 837,
-      "length": 5,
-      "value": "false"
+      "value": "2"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
@@ -2272,65 +2659,65 @@
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "Array",
-      "offset": 923,
+      "offset": 1181,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "Dictionary",
-      "offset": 974,
+      "offset": 1232,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "BooleanLiteral",
-      "offset": 1022,
+      "offset": 1280,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "BooleanLiteral",
-      "offset": 1072,
+      "offset": 1330,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "BooleanLiteral",
-      "offset": 1150,
+      "offset": 1605,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "StringLiteral",
-      "offset": 1206,
+      "offset": 1661,
       "length": 17,
       "value": "\"com.theymes.sdk\""
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "StringLiteral",
-      "offset": 1235,
+      "offset": 1690,
       "length": 12,
       "value": "\"TheymesSdk\""
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "StringLiteral",
-      "offset": 1750,
+      "offset": 2205,
       "length": 32,
       "value": "\"com.theymes.sdk.NetworkMonitor\""
     },
     {
-      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1936,
-      "length": 3,
-      "value": "300"
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PersistedConfig.swift",
+      "kind": "Array",
+      "offset": 179,
+      "length": 50,
+      "value": "[\"eventPollerNextPollAt\", \"hasSupportInteraction\"]"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/responses\/SdkEventsResponse.swift",
@@ -2341,36 +2728,71 @@
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
-      "kind": "BooleanLiteral",
-      "offset": 80,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
-      "kind": "BooleanLiteral",
+      "kind": "IntegerLiteral",
       "offset": 115,
+      "length": 2,
+      "value": "28"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
+      "kind": "IntegerLiteral",
+      "offset": 120,
+      "length": 2,
+      "value": "24"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
+      "kind": "IntegerLiteral",
+      "offset": 125,
+      "length": 4,
+      "value": "3600"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
+      "kind": "IntegerLiteral",
+      "offset": 187,
+      "length": 5,
+      "value": "86400"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
+      "kind": "BooleanLiteral",
+      "offset": 231,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
+      "kind": "IntegerLiteral",
+      "offset": 273,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
+      "kind": "BooleanLiteral",
+      "offset": 304,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
       "kind": "BooleanLiteral",
-      "offset": 154,
+      "offset": 343,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
       "kind": "BooleanLiteral",
-      "offset": 200,
+      "offset": 389,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/EventPoller.swift",
       "kind": "BooleanLiteral",
-      "offset": 233,
+      "offset": 422,
       "length": 5,
       "value": "false"
     },
@@ -2405,16 +2827,51 @@
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SdkSettingsFetcher.swift",
       "kind": "IntegerLiteral",
-      "offset": 327,
-      "length": 1,
-      "value": "0"
+      "offset": 290,
+      "length": 5,
+      "value": "86400"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SdkSettingsFetcher.swift",
       "kind": "IntegerLiteral",
-      "offset": 358,
+      "offset": 364,
       "length": 1,
-      "value": "5"
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SdkSettingsFetcher.swift",
+      "kind": "IntegerLiteral",
+      "offset": 368,
+      "length": 1,
+      "value": "7"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SdkSettingsFetcher.swift",
+      "kind": "IntegerLiteral",
+      "offset": 372,
+      "length": 2,
+      "value": "24"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SdkSettingsFetcher.swift",
+      "kind": "IntegerLiteral",
+      "offset": 377,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SdkSettingsFetcher.swift",
+      "kind": "IntegerLiteral",
+      "offset": 382,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/SdkSettingsFetcher.swift",
+      "kind": "IntegerLiteral",
+      "offset": 497,
+      "length": 1,
+      "value": "0"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PortraitHostingController.swift",
