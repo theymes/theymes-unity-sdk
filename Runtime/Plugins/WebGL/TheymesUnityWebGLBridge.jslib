@@ -262,6 +262,30 @@ mergeInto(LibraryManager.library, {
     }
   },
 
+  TheymesAddBreadcrumb: function(breadcrumb) {
+    try {
+      window.theymes.addBreadcrumb(UTF8ToString(breadcrumb));
+    } catch (error) {
+      console.error("TheymesSdk.AddBreadcrumb() failed", error);
+    }
+  },
+
+  TheymesAddBreadcrumbs: function(breadcrumbs) {
+    try {
+      window.theymes.addBreadcrumbs(JSON.parse(UTF8ToString(breadcrumbs)));
+    } catch (error) {
+      console.error("TheymesSdk.AddBreadcrumbs() failed", error);
+    }
+  },
+
+  TheymesClearBreadcrumbs: function() {
+    try {
+      window.theymes.clearBreadcrumbs();
+    } catch (error) {
+      console.error("TheymesSdk.ClearBreadcrumbs() failed", error);
+    }
+  },
+
   TheymesRemoveTag: function(tag) {
     try {
       window.theymes.removeTag(UTF8ToString(tag));

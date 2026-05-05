@@ -43,6 +43,9 @@ extern "C"
   void TheymesSetTags(const char *tags);
   void TheymesAddTag(const char *tag);
   void TheymesAddTags(const char *tags);
+  void TheymesAddBreadcrumb(const char *breadcrumb);
+  void TheymesAddBreadcrumbs(const char *breadcrumbs);
+  void TheymesClearBreadcrumbs();
   void TheymesRemoveTag(const char *tag);
   void TheymesRemoveTags(const char *tags);
   void TheymesRemoveAllTags();

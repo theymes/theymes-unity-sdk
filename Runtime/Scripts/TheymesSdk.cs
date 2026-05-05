@@ -329,6 +329,39 @@ namespace Theymes
             #endif
         }
 
+        public static void AddBreadcrumb(string breadcrumb)
+        {
+            #if UNITY_IOS && !UNITY_EDITOR
+            TheymesUnityIosBridge.AddBreadcrumb(breadcrumb);
+            #elif UNITY_ANDROID && !UNITY_EDITOR
+            TheymesUnityAndroidBridge.AddBreadcrumb(breadcrumb);
+            #elif UNITY_WEBGL && !UNITY_EDITOR
+            TheymesUnityWebGLBridge.AddBreadcrumb(breadcrumb);
+            #endif
+        }
+
+        public static void AddBreadcrumbs(IList<string> breadcrumbs)
+        {
+            #if UNITY_IOS && !UNITY_EDITOR
+            TheymesUnityIosBridge.AddBreadcrumbs(TheymesJsonHelpers.StringListToJson(breadcrumbs));
+            #elif UNITY_ANDROID && !UNITY_EDITOR
+            TheymesUnityAndroidBridge.AddBreadcrumbs(TheymesJsonHelpers.StringListToJson(breadcrumbs));
+            #elif UNITY_WEBGL && !UNITY_EDITOR
+            TheymesUnityWebGLBridge.AddBreadcrumbs(TheymesJsonHelpers.StringListToJson(breadcrumbs));
+            #endif
+        }
+
+        public static void ClearBreadcrumbs()
+        {
+            #if UNITY_IOS && !UNITY_EDITOR
+            TheymesUnityIosBridge.ClearBreadcrumbs();
+            #elif UNITY_ANDROID && !UNITY_EDITOR
+            TheymesUnityAndroidBridge.ClearBreadcrumbs();
+            #elif UNITY_WEBGL && !UNITY_EDITOR
+            TheymesUnityWebGLBridge.ClearBreadcrumbs();
+            #endif
+        }
+
         public static void RemoveTag(string tag)
         {
             #if UNITY_IOS && !UNITY_EDITOR

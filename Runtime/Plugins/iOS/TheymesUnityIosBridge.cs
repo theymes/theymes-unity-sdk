@@ -90,6 +90,15 @@ namespace Theymes
         private static extern void TheymesAddTags(string tags);
 
         [DllImport("__Internal")]
+        private static extern void TheymesAddBreadcrumb(string breadcrumb);
+
+        [DllImport("__Internal")]
+        private static extern void TheymesAddBreadcrumbs(string breadcrumbs);
+
+        [DllImport("__Internal")]
+        private static extern void TheymesClearBreadcrumbs();
+
+        [DllImport("__Internal")]
         private static extern void TheymesRemoveTag(string tag);
 
         [DllImport("__Internal")]
@@ -286,6 +295,21 @@ namespace Theymes
         public static void AddTags(string tagsJson)
         {
             TheymesAddTags(tagsJson);
+        }
+
+        public static void AddBreadcrumb(string breadcrumb)
+        {
+            TheymesAddBreadcrumb(breadcrumb);
+        }
+
+        public static void AddBreadcrumbs(string breadcrumbsJson)
+        {
+            TheymesAddBreadcrumbs(breadcrumbsJson);
+        }
+
+        public static void ClearBreadcrumbs()
+        {
+            TheymesClearBreadcrumbs();
         }
 
         public static void RemoveTag(string tag)

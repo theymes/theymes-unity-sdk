@@ -216,6 +216,21 @@ namespace Theymes
             bridgeClass.CallStatic("addTags", tagsJson);
         }
 
+        public static void AddBreadcrumb(string breadcrumb)
+        {
+            bridgeClass.CallStatic("addBreadcrumb", breadcrumb);
+        }
+
+        public static void AddBreadcrumbs(string breadcrumbsJson)
+        {
+            bridgeClass.CallStatic("addBreadcrumbs", breadcrumbsJson);
+        }
+
+        public static void ClearBreadcrumbs()
+        {
+            bridgeClass.CallStatic("clearBreadcrumbs");
+        }
+
         public static void RemoveTag(string tag)
         {
             bridgeClass.CallStatic("removeTag", tag);

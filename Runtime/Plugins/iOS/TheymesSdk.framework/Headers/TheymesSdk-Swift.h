@@ -345,6 +345,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, weak) id <TheymesDelegate> _Nu
 + (void)setTags:(NSArray<NSString *> * _Nonnull)tags;
 + (void)addTag:(NSString * _Nonnull)tag;
 + (void)addTags:(NSArray<NSString *> * _Nonnull)tags;
++ (void)addBreadcrumb:(NSString * _Nonnull)breadcrumb;
++ (void)addBreadcrumbs:(NSArray<NSString *> * _Nonnull)breadcrumbs;
++ (void)clearBreadcrumbs;
 + (void)removeTag:(NSString * _Nonnull)tag;
 + (void)removeTags:(NSArray<NSString *> * _Nonnull)tags;
 + (void)removeAllTags;

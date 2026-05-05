@@ -232,6 +232,19 @@ void TheymesAddTags(const char *tags) {
     [Theymes addTags:tagsArray];
 }
 
+void TheymesAddBreadcrumb(const char *breadcrumb) {
+    [Theymes addBreadcrumb:cStringToNSString(breadcrumb)];
+}
+
+void TheymesAddBreadcrumbs(const char *breadcrumbs) {
+    NSArray *breadcrumbsArray = jsonStrPointerToNSArray(breadcrumbs);
+    [Theymes addBreadcrumbs:breadcrumbsArray];
+}
+
+void TheymesClearBreadcrumbs() {
+    [Theymes clearBreadcrumbs];
+}
+
 void TheymesRemoveTag(const char *tag) {
     [Theymes removeTag:cStringToNSString(tag)];
 }
