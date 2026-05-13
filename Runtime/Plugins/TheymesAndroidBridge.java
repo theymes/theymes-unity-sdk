@@ -177,6 +177,11 @@ public class TheymesAndroidBridge {
         TheymesSdk.setFields(fields);
     }
 
+    public static void setBuiltinFields(String fieldsJson) {
+        Map<String, Object> fields = jsonStrToMap(fieldsJson);
+        TheymesSdk.setBuiltinFields(fields);
+    }
+
     public static void addField(String key, Object value) {
         TheymesSdk.addField(key, value);
     }

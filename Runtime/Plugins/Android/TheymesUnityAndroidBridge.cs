@@ -34,6 +34,12 @@ namespace Theymes
         {
             TheymesUnityAndroidBridge.TriggerUnansweredMessageCountUpdated(count);
         }
+
+        [Preserve]
+        public void onUpdateSignedMetadataTokenExpiration(int expiresInSeconds)
+        {
+            TheymesUnityAndroidBridge.TriggerSignedMetadataTokenExpirationUpdated(expiresInSeconds);
+        }
     }
 
     internal static class TheymesUnityAndroidBridge
@@ -42,6 +48,7 @@ namespace Theymes
         public static event System.Action onClose;
         public static event System.Action<int> onUnreadMessageCountUpdated;
         public static event System.Action<int> onUnansweredMessageCountUpdated;
+        public static event System.Action<int> onSignedMetadataTokenExpirationUpdated;
 
         private static AndroidJavaObject unityContext;
         private static AndroidJavaClass bridgeClass;
@@ -256,6 +263,11 @@ namespace Theymes
             bridgeClass.CallStatic("setFields", fieldsJson);
         }
 
+        public static void SetBuiltinFields(string fieldsJson)
+        {
+            bridgeClass.CallStatic("setBuiltinFields", fieldsJson);
+        }
+
         public static void AddField(string key, string value)
         {
             bridgeClass.CallStatic("addField", key, value);
@@ -359,6 +371,11 @@ namespace Theymes
         public static void TriggerUnansweredMessageCountUpdated(int count)
         {
             onUnansweredMessageCountUpdated?.Invoke(count);
+        }
+
+        public static void TriggerSignedMetadataTokenExpirationUpdated(int expiresInSeconds)
+        {
+            onSignedMetadataTokenExpirationUpdated?.Invoke(expiresInSeconds);
         }
     }
 }

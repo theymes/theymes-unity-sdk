@@ -13,6 +13,7 @@ namespace Theymes
         public static event System.Action onClose;
         public static event System.Action<int> onUnreadMessageCountUpdated;
         public static event System.Action<int> onUnansweredMessageCountUpdated;
+        public static event System.Action<int> onSignedMetadataTokenExpirationUpdated;
 
         [DllImport("__Internal")]
         private static extern void TheymesInitialize(string token, string domain, string optionsJson);
@@ -114,6 +115,9 @@ namespace Theymes
         private static extern void TheymesSetFields(string fields);
 
         [DllImport("__Internal")]
+        private static extern void TheymesSetBuiltinFields(string fields);
+
+        [DllImport("__Internal")]
         private static extern void TheymesAddField(string key, string value);
 
         [DllImport("__Internal")]
@@ -157,6 +161,9 @@ namespace Theymes
 
         [DllImport("__Internal")]
         private static extern void TheymesOnUnansweredMessageCountUpdated(Action<int> callback);
+
+        [DllImport("__Internal")]
+        private static extern void TheymesOnSignedMetadataTokenExpirationUpdated(Action<int> callback);
 
         public static void Initialize(string token, string domain, string optionsJson)
         {
@@ -323,6 +330,11 @@ namespace Theymes
             TheymesSetFields(fieldsJson);
         }
 
+        public static void SetBuiltinFields(string fieldsJson)
+        {
+            TheymesSetBuiltinFields(fieldsJson);
+        }
+
         public static void AddField(string key, string value)
         {
             TheymesAddField(key, value);
@@ -384,6 +396,7 @@ namespace Theymes
             TheymesOnClose(OnClose);
             TheymesOnUnreadMessageCountUpdated(OnUnreadMessageCountUpdated);
             TheymesOnUnansweredMessageCountUpdated(OnUnansweredMessageCountUpdated);
+            TheymesOnSignedMetadataTokenExpirationUpdated(OnSignedMetadataTokenExpirationUpdated);
         }
 
         [MonoPInvokeCallback(typeof(Action))]
@@ -408,6 +421,12 @@ namespace Theymes
         public static void OnUnansweredMessageCountUpdated(int count)
         {
             onUnansweredMessageCountUpdated?.Invoke(count);
+        }
+
+        [MonoPInvokeCallback(typeof(Action<int>))]
+        public static void OnSignedMetadataTokenExpirationUpdated(int expiresInSeconds)
+        {
+            onSignedMetadataTokenExpirationUpdated?.Invoke(expiresInSeconds);
         }
     }
 }

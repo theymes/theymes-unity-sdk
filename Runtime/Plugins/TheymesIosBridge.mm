@@ -10,6 +10,7 @@ static OnOpenClose openCallback;
 static OnOpenClose closeCallback;
 static OnMessageCountUpdated unreadMessageCallback;
 static OnMessageCountUpdated unansweredMessageCallback;
+static OnMessageCountUpdated signedMetadataTokenExpirationCallback;
 
 @implementation TheymesIosBridgeDelegate
 - (void)didOpen {
@@ -30,6 +31,11 @@ static OnMessageCountUpdated unansweredMessageCallback;
 - (void)didUpdateUnansweredMessageCount:(NSInteger)count { 
     if (unansweredMessageCallback) {
         unansweredMessageCallback(count);
+    }
+}
+- (void)didUpdateSignedMetadataTokenExpiration:(NSInteger)expiresInSeconds {
+    if (signedMetadataTokenExpirationCallback) {
+        signedMetadataTokenExpirationCallback(expiresInSeconds);
     }
 }
 @end
@@ -266,6 +272,10 @@ void TheymesSetFields(const char *fields) {
     [Theymes setFields:jsonStrPointerToNSDictionary(fields)];
 }
 
+void TheymesSetBuiltinFields(const char *fields) {
+    [Theymes setBuiltinFields:jsonStrPointerToNSDictionary(fields)];
+}
+
 void TheymesAddField(const char *key, const char *value) {
     NSString *keyString = cStringToNSString(key);
     NSString *valueString = cStringToNSString(value);
@@ -353,4 +363,8 @@ void TheymesOnUnreadMessageCountUpdated(OnMessageCountUpdated callback) {
 
 void TheymesOnUnansweredMessageCountUpdated(OnMessageCountUpdated callback) {
     unansweredMessageCallback = callback;
+}
+
+void TheymesOnSignedMetadataTokenExpirationUpdated(OnMessageCountUpdated callback) {
+    signedMetadataTokenExpirationCallback = callback;
 }

@@ -336,6 +336,14 @@ mergeInto(LibraryManager.library, {
     }
   },
 
+  TheymesSetBuiltinFields: function(fields) {
+    try {
+      window.theymes.setBuiltinFields(JSON.parse(UTF8ToString(fields)));
+    } catch (error) {
+      console.error("TheymesSdk.SetBuiltinFields() failed", error);
+    }
+  },
+
   TheymesAddField: function(key, value) {
     try {
       window.theymes.addField(UTF8ToString(key), UTF8ToString(value));
@@ -435,6 +443,12 @@ mergeInto(LibraryManager.library, {
   TheymesOnUnansweredMessageCountUpdated: function(callback) {
     window.theymes.addEventListener("unansweredMessageCountUpdate", function(count) {
       {{{ makeDynCall('vi', 'callback') }}} (count);
+    });
+  },
+
+  TheymesOnSignedMetadataTokenExpirationUpdated: function(callback) {
+    window.theymes.addEventListener("signedMetadataTokenExpirationUpdate", function(expiresInSeconds) {
+      {{{ makeDynCall('vi', 'callback') }}} (expiresInSeconds);
     });
   },
 

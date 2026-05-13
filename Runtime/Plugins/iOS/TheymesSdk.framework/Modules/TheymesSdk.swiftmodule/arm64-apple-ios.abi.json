@@ -134,6 +134,37 @@
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didUpdateSignedMetadataTokenExpiration",
+            "printedName": "didUpdateSignedMetadataTokenExpiration(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(pl)TheymesDelegate(im)didUpdateSignedMetadataTokenExpiration:",
+            "mangledName": "$s10TheymesSdk0A8DelegateP38didUpdateSignedMetadataTokenExpirationyySiF",
+            "moduleName": "TheymesSdk",
+            "genericSig": "<τ_0_0 where τ_0_0 : TheymesSdk.TheymesDelegate>",
+            "sugared_genericSig": "<Self where Self : TheymesSdk.TheymesDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Optional",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",
@@ -1753,6 +1784,49 @@
           },
           {
             "kind": "Function",
+            "name": "setBuiltinFields",
+            "printedName": "setBuiltinFields(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@TheymesSdk@objc(cs)Theymes(cm)setBuiltinFields:",
+            "mangledName": "$s10TheymesSdk0A0C16setBuiltinFieldsyySDySSypGFZ",
+            "moduleName": "TheymesSdk",
+            "static": true,
+            "objc_name": "setBuiltinFields:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "addField",
             "printedName": "addField(_:value:)",
             "children": [
@@ -2758,70 +2832,77 @@
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "Array",
-      "offset": 1181,
+      "offset": 1401,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "Dictionary",
-      "offset": 1232,
+      "offset": 1452,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "Dictionary",
+      "offset": 1511,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "BooleanLiteral",
-      "offset": 1280,
+      "offset": 1559,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "BooleanLiteral",
-      "offset": 1330,
+      "offset": 1609,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "BooleanLiteral",
-      "offset": 1605,
+      "offset": 1884,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "StringLiteral",
-      "offset": 1661,
+      "offset": 1940,
       "length": 17,
       "value": "\"com.theymes.sdk\""
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "StringLiteral",
-      "offset": 1690,
+      "offset": 1969,
       "length": 12,
       "value": "\"TheymesSdk\""
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "Array",
-      "offset": 1940,
+      "offset": 2219,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "IntegerLiteral",
-      "offset": 1991,
+      "offset": 2270,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "StringLiteral",
-      "offset": 2494,
+      "offset": 2773,
       "length": 32,
       "value": "\"com.theymes.sdk.NetworkMonitor\""
     },

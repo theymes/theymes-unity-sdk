@@ -24,6 +24,7 @@ import os
   @objc optional func didClose()
   @objc optional func didUpdateUnreadMessageCount(_ count: Swift.Int)
   @objc optional func didUpdateUnansweredMessageCount(_ count: Swift.Int)
+  @objc optional func didUpdateSignedMetadataTokenExpiration(_ expiresInSeconds: Swift.Int)
 }
 @objc public enum PushTokenType : Swift.Int {
   case apns = 1
@@ -70,6 +71,7 @@ import os
   @objc(removeAllTags) public static func removeAllTags()
   @objc(getFields) public static func getFields() -> [Swift.String : Any]
   @objc(setFields:) public static func setFields(_ fields: [Swift.String : Any])
+  @objc(setBuiltinFields:) public static func setBuiltinFields(_ fields: [Swift.String : Any])
   @objc(addField:value:) public static func addField(_ key: Swift.String, value: Any)
   @objc(addFields:) public static func addFields(_ fields: [Swift.String : Any])
   @objc(removeField:) public static func removeField(_ field: Swift.String)
