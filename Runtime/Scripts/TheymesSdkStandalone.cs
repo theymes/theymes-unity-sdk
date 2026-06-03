@@ -9,7 +9,6 @@ namespace Theymes
 {
     internal static partial class TheymesSdkStandalone
     {
-        private const string SdkVersion = "1.4.0";
         private const int DefaultBreadcrumbsMaxSizeInBytes = 512000;
         private const int DefaultBreadcrumbsMaxItemCount = 1000;
         private const double DefaultBreadcrumbsMaxAgeInSeconds = 12 * 60 * 60;
@@ -101,11 +100,6 @@ namespace Theymes
         public static void Close()
         {
             LogUnsupportedStandaloneFeature("Close");
-        }
-
-        public static string GetSdkVersion()
-        {
-            return SdkVersion;
         }
 
         public static bool IsSupported()
@@ -468,7 +462,7 @@ namespace Theymes
             var request = new SimpleJSON.JSONObject();
             request["token"] = token;
             request["metadata"] = BuildMetadata(config);
-            request["sdkVersion"] = SdkVersion;
+            request["sdkVersion"] = TheymesSdk.SdkVersion;
             request["platform"] = GetPlatform();
             request["clientTimestampMs"] = new SimpleJSON.JSONNumber(clientTimestampMs);
 
@@ -577,7 +571,7 @@ namespace Theymes
         private static Dictionary<string, object> AddBuiltinFields(Dictionary<string, object> resolvedFields)
         {
             resolvedFields["_platform"] = GetPlatform();
-            resolvedFields["_sdkVersion"] = SdkVersion;
+            resolvedFields["_sdkVersion"] = TheymesSdk.SdkVersion;
 
             foreach (var field in TheymesSdk.GetUnityBuiltinFields())
             {

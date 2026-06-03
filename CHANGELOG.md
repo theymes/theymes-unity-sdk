@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.4.1
+
+- Add `TheymesSdk.GetNativeSdkVersion()` for reading the underlying iOS, Android, or WebGL SDK version.
+
 ## 1.4.0
 
 - Add breadcrumb support for passing recent game context to support sessions.
