@@ -43,12 +43,16 @@ extern "C"
   void TheymesSetTags(const char *tags);
   void TheymesAddTag(const char *tag);
   void TheymesAddTags(const char *tags);
+  void TheymesAddBreadcrumb(const char *breadcrumb);
+  void TheymesAddBreadcrumbs(const char *breadcrumbs);
+  void TheymesClearBreadcrumbs();
   void TheymesRemoveTag(const char *tag);
   void TheymesRemoveTags(const char *tags);
   void TheymesRemoveAllTags();
 
   const char *TheymesGetFields();
   void TheymesSetFields(const char *fields);
+  void TheymesSetBuiltinFields(const char *fields);
   void TheymesAddField(const char *key, const char *value);
   void TheymesAddFields(const char *fields);
   void TheymesRemoveField(const char *field);
@@ -71,6 +75,7 @@ extern "C"
   void TheymesOnClose(OnOpenClose callback);
   void TheymesOnUnreadMessageCountUpdated(OnMessageCountUpdated callback);
   void TheymesOnUnansweredMessageCountUpdated(OnMessageCountUpdated callback);
+  void TheymesOnSignedMetadataTokenExpirationUpdated(OnMessageCountUpdated callback);
 
 #ifdef __cplusplus
 }

@@ -13,6 +13,7 @@ namespace Theymes
         public static event System.Action onClose;
         public static event System.Action<int> onUnreadMessageCountUpdated;
         public static event System.Action<int> onUnansweredMessageCountUpdated;
+        public static event System.Action<int> onSignedMetadataTokenExpirationUpdated;
 
         [DllImport("__Internal")]
         private static extern void TheymesInitialize(string token, string domain, string optionsJson);
@@ -90,6 +91,15 @@ namespace Theymes
         private static extern void TheymesAddTags(string tags);
 
         [DllImport("__Internal")]
+        private static extern void TheymesAddBreadcrumb(string breadcrumb);
+
+        [DllImport("__Internal")]
+        private static extern void TheymesAddBreadcrumbs(string breadcrumbs);
+
+        [DllImport("__Internal")]
+        private static extern void TheymesClearBreadcrumbs();
+
+        [DllImport("__Internal")]
         private static extern void TheymesRemoveTag(string tag);
 
         [DllImport("__Internal")]
@@ -103,6 +113,9 @@ namespace Theymes
 
         [DllImport("__Internal")]
         private static extern void TheymesSetFields(string fields);
+
+        [DllImport("__Internal")]
+        private static extern void TheymesSetBuiltinFields(string fields);
 
         [DllImport("__Internal")]
         private static extern void TheymesAddField(string key, string value);
@@ -148,6 +161,9 @@ namespace Theymes
 
         [DllImport("__Internal")]
         private static extern void TheymesOnUnansweredMessageCountUpdated(Action<int> callback);
+
+        [DllImport("__Internal")]
+        private static extern void TheymesOnSignedMetadataTokenExpirationUpdated(Action<int> callback);
 
         public static void Initialize(string token, string domain, string optionsJson)
         {
@@ -274,6 +290,21 @@ namespace Theymes
             TheymesAddTags(tagsJson);
         }
 
+        public static void AddBreadcrumb(string breadcrumb)
+        {
+            TheymesAddBreadcrumb(breadcrumb);
+        }
+
+        public static void AddBreadcrumbs(string breadcrumbsJson)
+        {
+            TheymesAddBreadcrumbs(breadcrumbsJson);
+        }
+
+        public static void ClearBreadcrumbs()
+        {
+            TheymesClearBreadcrumbs();
+        }
+
         public static void RemoveTag(string tag)
         {
             TheymesRemoveTag(tag);
@@ -297,6 +328,11 @@ namespace Theymes
         public static void SetFields(string fieldsJson)
         {
             TheymesSetFields(fieldsJson);
+        }
+
+        public static void SetBuiltinFields(string fieldsJson)
+        {
+            TheymesSetBuiltinFields(fieldsJson);
         }
 
         public static void AddField(string key, string value)
@@ -360,6 +396,7 @@ namespace Theymes
             TheymesOnClose(OnClose);
             TheymesOnUnreadMessageCountUpdated(OnUnreadMessageCountUpdated);
             TheymesOnUnansweredMessageCountUpdated(OnUnansweredMessageCountUpdated);
+            TheymesOnSignedMetadataTokenExpirationUpdated(OnSignedMetadataTokenExpirationUpdated);
         }
 
         [MonoPInvokeCallback(typeof(Action))]
@@ -384,6 +421,12 @@ namespace Theymes
         public static void OnUnansweredMessageCountUpdated(int count)
         {
             onUnansweredMessageCountUpdated?.Invoke(count);
+        }
+
+        [MonoPInvokeCallback(typeof(Action<int>))]
+        public static void OnSignedMetadataTokenExpirationUpdated(int expiresInSeconds)
+        {
+            onSignedMetadataTokenExpirationUpdated?.Invoke(expiresInSeconds);
         }
     }
 }

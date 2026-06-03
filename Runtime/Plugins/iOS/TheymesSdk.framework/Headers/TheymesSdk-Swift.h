@@ -345,11 +345,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, weak) id <TheymesDelegate> _Nu
 + (void)setTags:(NSArray<NSString *> * _Nonnull)tags;
 + (void)addTag:(NSString * _Nonnull)tag;
 + (void)addTags:(NSArray<NSString *> * _Nonnull)tags;
++ (void)addBreadcrumb:(NSString * _Nonnull)breadcrumb;
++ (void)addBreadcrumbs:(NSArray<NSString *> * _Nonnull)breadcrumbs;
++ (void)clearBreadcrumbs;
 + (void)removeTag:(NSString * _Nonnull)tag;
 + (void)removeTags:(NSArray<NSString *> * _Nonnull)tags;
 + (void)removeAllTags;
 + (NSDictionary<NSString *, id> * _Nonnull)getFields SWIFT_WARN_UNUSED_RESULT;
 + (void)setFields:(NSDictionary<NSString *, id> * _Nonnull)fields;
++ (void)setBuiltinFields:(NSDictionary<NSString *, id> * _Nonnull)fields;
 + (void)addField:(NSString * _Nonnull)key value:(id _Nonnull)value;
 + (void)addFields:(NSDictionary<NSString *, id> * _Nonnull)fields;
 + (void)removeField:(NSString * _Nonnull)field;
@@ -379,6 +383,7 @@ SWIFT_PROTOCOL("_TtP10TheymesSdk15TheymesDelegate_")
 - (void)didClose;
 - (void)didUpdateUnreadMessageCount:(NSInteger)count;
 - (void)didUpdateUnansweredMessageCount:(NSInteger)count;
+- (void)didUpdateSignedMetadataTokenExpiration:(NSInteger)expiresInSeconds;
 @end
 
 #endif

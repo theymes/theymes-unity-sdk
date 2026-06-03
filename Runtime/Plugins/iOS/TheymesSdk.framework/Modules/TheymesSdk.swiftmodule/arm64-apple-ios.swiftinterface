@@ -24,6 +24,7 @@ import os
   @objc optional func didClose()
   @objc optional func didUpdateUnreadMessageCount(_ count: Swift.Int)
   @objc optional func didUpdateUnansweredMessageCount(_ count: Swift.Int)
+  @objc optional func didUpdateSignedMetadataTokenExpiration(_ expiresInSeconds: Swift.Int)
 }
 @objc public enum PushTokenType : Swift.Int {
   case apns = 1
@@ -62,11 +63,15 @@ import os
   @objc(setTags:) public static func setTags(_ tags: [Swift.String])
   @objc(addTag:) public static func addTag(_ tag: Swift.String)
   @objc(addTags:) public static func addTags(_ tags: [Swift.String])
+  @objc(addBreadcrumb:) public static func addBreadcrumb(_ breadcrumb: Swift.String)
+  @objc(addBreadcrumbs:) public static func addBreadcrumbs(_ breadcrumbs: [Swift.String])
+  @objc(clearBreadcrumbs) public static func clearBreadcrumbs()
   @objc(removeTag:) public static func removeTag(_ tag: Swift.String)
   @objc(removeTags:) public static func removeTags(_ tags: [Swift.String])
   @objc(removeAllTags) public static func removeAllTags()
   @objc(getFields) public static func getFields() -> [Swift.String : Any]
   @objc(setFields:) public static func setFields(_ fields: [Swift.String : Any])
+  @objc(setBuiltinFields:) public static func setBuiltinFields(_ fields: [Swift.String : Any])
   @objc(addField:value:) public static func addField(_ key: Swift.String, value: Any)
   @objc(addFields:) public static func addFields(_ fields: [Swift.String : Any])
   @objc(removeField:) public static func removeField(_ field: Swift.String)

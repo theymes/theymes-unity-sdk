@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.4.0
+
+- Add breadcrumb support for passing recent game context to support sessions.
+  - New Unity APIs: `TheymesSdk.AddBreadcrumb()`, `TheymesSdk.AddBreadcrumbs()`, and `TheymesSdk.ClearBreadcrumbs()`.
+  - Breadcrumbs are timestamped automatically, bounded by SDK settings, cleared by `TheymesSdk.Reset()`, and sent when opening support or resources.
+- Add Windows, macOS, and Linux support.
+- Allow SDK integrations to be tested while running games in the Unity Editor.
+- Send the Unity engine version as metadata.
+- Fix a bug on Android where restoring the Theymes support view after app was terminated crashes on Android 13 on certain Xiaomis devices.
+- Avoid running Android SDK foreground/background lifecycle work inline during Unity pause/resume callbacks, reducing the risk of pause-time ANRs.
+- Include the target player in notification actions so pending notification actions survive reset/logout and only open for the targeted player.
+- Do not show or open push notifications that are targeted at a different player than the one currently using the device.
+- When the support view is already open, push notification taps now navigate the existing view instead of being ignored.
+- Add `TheymesSdk.onSignedMetadataTokenExpirationUpdated` for tracking signed metadata token expiration time while the game is in the foreground.
+
 ## 1.3.0
 
 - Add optional `InitializeOptions` parameter to `TheymesSdk.Initialize()` for configuring various options.

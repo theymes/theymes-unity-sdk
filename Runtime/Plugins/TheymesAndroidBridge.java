@@ -2,6 +2,8 @@ package com.theymes.sdk.unity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,6 +22,7 @@ import com.theymes.sdk.android.TheymesConfig;
 import com.theymes.sdk.android.InitializeOptions;
 
 public class TheymesAndroidBridge {
+    private static final Handler MAIN = new Handler(Looper.getMainLooper());
 
     public static void initialize(Context context, String token, String domain, String optionsJson) {
         InitializeOptions options = jsonStrToInitializeOptions(optionsJson);
@@ -134,6 +137,22 @@ public class TheymesAndroidBridge {
         TheymesSdk.addTags(tags);
     }
 
+    public static void addBreadcrumb(String breadcrumb) {
+        TheymesSdk.addBreadcrumb(breadcrumb);
+    }
+
+    public static void addBreadcrumbs(String breadcrumbsJson) {
+        try {
+            TheymesSdk.addBreadcrumbs(jsonArrayToList(new JSONArray(breadcrumbsJson)));
+        } catch (JSONException e) {
+            Log.e("TheymesAndroidBridge", "Failed to parse JSON into breadcrumbs: " + e.getMessage());
+        }
+    }
+
+    public static void clearBreadcrumbs() {
+        TheymesSdk.clearBreadcrumbs();
+    }
+
     public static void removeTag(String tag) {
         TheymesSdk.removeTag(tag);
     }
@@ -156,6 +175,11 @@ public class TheymesAndroidBridge {
     public static void setFields(String fieldsJson) {
         Map<String, Object> fields = jsonStrToMap(fieldsJson);
         TheymesSdk.setFields(fields);
+    }
+
+    public static void setBuiltinFields(String fieldsJson) {
+        Map<String, Object> fields = jsonStrToMap(fieldsJson);
+        TheymesSdk.setBuiltinFields(fields);
     }
 
     public static void addField(String key, Object value) {
@@ -227,7 +251,8 @@ public class TheymesAndroidBridge {
     }
 
     public static void setIsInForeground(boolean isInForeground) {
-        TheymesSdk.setIsInForeground(isInForeground);
+        // Avoid doing SDK lifecycle work inline on Unity's pause/resume callback path.
+        MAIN.post(() -> TheymesSdk.setIsInForeground(isInForeground));
     }
 
     // Helper methods

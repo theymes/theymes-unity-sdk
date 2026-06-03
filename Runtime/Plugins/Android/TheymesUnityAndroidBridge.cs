@@ -34,6 +34,12 @@ namespace Theymes
         {
             TheymesUnityAndroidBridge.TriggerUnansweredMessageCountUpdated(count);
         }
+
+        [Preserve]
+        public void onUpdateSignedMetadataTokenExpiration(int expiresInSeconds)
+        {
+            TheymesUnityAndroidBridge.TriggerSignedMetadataTokenExpirationUpdated(expiresInSeconds);
+        }
     }
 
     internal static class TheymesUnityAndroidBridge
@@ -42,6 +48,7 @@ namespace Theymes
         public static event System.Action onClose;
         public static event System.Action<int> onUnreadMessageCountUpdated;
         public static event System.Action<int> onUnansweredMessageCountUpdated;
+        public static event System.Action<int> onSignedMetadataTokenExpirationUpdated;
 
         private static AndroidJavaObject unityContext;
         private static AndroidJavaClass bridgeClass;
@@ -216,6 +223,21 @@ namespace Theymes
             bridgeClass.CallStatic("addTags", tagsJson);
         }
 
+        public static void AddBreadcrumb(string breadcrumb)
+        {
+            bridgeClass.CallStatic("addBreadcrumb", breadcrumb);
+        }
+
+        public static void AddBreadcrumbs(string breadcrumbsJson)
+        {
+            bridgeClass.CallStatic("addBreadcrumbs", breadcrumbsJson);
+        }
+
+        public static void ClearBreadcrumbs()
+        {
+            bridgeClass.CallStatic("clearBreadcrumbs");
+        }
+
         public static void RemoveTag(string tag)
         {
             bridgeClass.CallStatic("removeTag", tag);
@@ -239,6 +261,11 @@ namespace Theymes
         public static void SetFields(string fieldsJson)
         {
             bridgeClass.CallStatic("setFields", fieldsJson);
+        }
+
+        public static void SetBuiltinFields(string fieldsJson)
+        {
+            bridgeClass.CallStatic("setBuiltinFields", fieldsJson);
         }
 
         public static void AddField(string key, string value)
@@ -344,6 +371,11 @@ namespace Theymes
         public static void TriggerUnansweredMessageCountUpdated(int count)
         {
             onUnansweredMessageCountUpdated?.Invoke(count);
+        }
+
+        public static void TriggerSignedMetadataTokenExpirationUpdated(int expiresInSeconds)
+        {
+            onSignedMetadataTokenExpirationUpdated?.Invoke(expiresInSeconds);
         }
     }
 }

@@ -262,6 +262,30 @@ mergeInto(LibraryManager.library, {
     }
   },
 
+  TheymesAddBreadcrumb: function(breadcrumb) {
+    try {
+      window.theymes.addBreadcrumb(UTF8ToString(breadcrumb));
+    } catch (error) {
+      console.error("TheymesSdk.AddBreadcrumb() failed", error);
+    }
+  },
+
+  TheymesAddBreadcrumbs: function(breadcrumbs) {
+    try {
+      window.theymes.addBreadcrumbs(JSON.parse(UTF8ToString(breadcrumbs)));
+    } catch (error) {
+      console.error("TheymesSdk.AddBreadcrumbs() failed", error);
+    }
+  },
+
+  TheymesClearBreadcrumbs: function() {
+    try {
+      window.theymes.clearBreadcrumbs();
+    } catch (error) {
+      console.error("TheymesSdk.ClearBreadcrumbs() failed", error);
+    }
+  },
+
   TheymesRemoveTag: function(tag) {
     try {
       window.theymes.removeTag(UTF8ToString(tag));
@@ -309,6 +333,14 @@ mergeInto(LibraryManager.library, {
       window.theymes.setFields(JSON.parse(UTF8ToString(fields)));
     } catch (error) {
       console.error("TheymesSdk.SetFields() failed", error);
+    }
+  },
+
+  TheymesSetBuiltinFields: function(fields) {
+    try {
+      window.theymes.setBuiltinFields(JSON.parse(UTF8ToString(fields)));
+    } catch (error) {
+      console.error("TheymesSdk.SetBuiltinFields() failed", error);
     }
   },
 
@@ -411,6 +443,12 @@ mergeInto(LibraryManager.library, {
   TheymesOnUnansweredMessageCountUpdated: function(callback) {
     window.theymes.addEventListener("unansweredMessageCountUpdate", function(count) {
       {{{ makeDynCall('vi', 'callback') }}} (count);
+    });
+  },
+
+  TheymesOnSignedMetadataTokenExpirationUpdated: function(callback) {
+    window.theymes.addEventListener("signedMetadataTokenExpirationUpdate", function(expiresInSeconds) {
+      {{{ makeDynCall('vi', 'callback') }}} (expiresInSeconds);
     });
   },
 

@@ -166,6 +166,8 @@ namespace Theymes
         {
             if (value is string str)
                 return new SimpleJSON.JSONString(str);
+            else if (value is IList<string> stringList)
+                return StringListToJsonArray(stringList);
             else if (value is int || value is uint
                     || value is float || value is double
                     || value is decimal

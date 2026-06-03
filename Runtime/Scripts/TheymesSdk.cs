@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Theymes
 {
@@ -9,6 +10,7 @@ namespace Theymes
         public static event System.Action onClose;
         public static event System.Action<int> onUnreadMessageCountUpdated;
         public static event System.Action<int> onUnansweredMessageCountUpdated;
+        public static event System.Action<int> onSignedMetadataTokenExpirationUpdated;
 
         private static bool isInitialized = false;
 
@@ -32,64 +34,119 @@ namespace Theymes
             #if UNITY_IOS && !UNITY_EDITOR
             var optionsJson = TheymesJsonHelpers.InitializeIosOptionsToJson(options);
             TheymesUnityIosBridge.Initialize(token, domain, optionsJson);
+            TheymesUnityIosBridge.SetBuiltinFields(TheymesJsonHelpers.DictionaryToJson(GetUnityBuiltinFields()));
             #elif UNITY_ANDROID && !UNITY_EDITOR
             var optionsJson = TheymesJsonHelpers.InitializeAndroidOptionsToJson(options);
             TheymesUnityAndroidBridge.Initialize(token, domain, optionsJson);
+            TheymesUnityAndroidBridge.SetBuiltinFields(TheymesJsonHelpers.DictionaryToJson(GetUnityBuiltinFields()));
             #elif UNITY_WEBGL && !UNITY_EDITOR
             var optionsJson = TheymesJsonHelpers.InitializeWebOptionsToJson(options);
             TheymesUnityWebGLBridge.Initialize(token, domain, optionsJson);
+            TheymesUnityWebGLBridge.SetBuiltinFields(TheymesJsonHelpers.DictionaryToJson(GetUnityBuiltinFields()));
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.Initialize(token, domain, options);
             #endif
+        }
 
-            SetFields(
-                new Dictionary<string, object>
-                {
-                    { "_unitySystemMemory", SystemInfo.systemMemorySize },
-                    { "_unityGraphicsMemory", SystemInfo.graphicsMemorySize },
-                }
-            );
+        internal static Dictionary<string, object> GetUnityBuiltinFields()
+        {
+            return new Dictionary<string, object>
+            {
+                { "_unityVersion", Application.unityVersion },
+                { "_unitySystemMemory", SystemInfo.systemMemorySize },
+                { "_unityGraphicsMemory", SystemInfo.graphicsMemorySize },
+            };
         }
 
         public static void OpenSupport()
         {
-            #if UNITY_IOS && !UNITY_EDITOR
-            TheymesUnityIosBridge.OpenSupport();
-            #elif UNITY_ANDROID && !UNITY_EDITOR
-            TheymesUnityAndroidBridge.OpenSupport();
-            #elif UNITY_WEBGL && !UNITY_EDITOR
-            TheymesUnityWebGLBridge.OpenSupport();
-            #endif
+            OpenSupportAsync();
         }
 
         public static void OpenSupport(TheymesConfig config)
         {
+            OpenSupportAsync(config);
+        }
+
+        public static Task OpenSupportAsync()
+        {
+            #if UNITY_IOS && !UNITY_EDITOR
+            TheymesUnityIosBridge.OpenSupport();
+            return Task.CompletedTask;
+            #elif UNITY_ANDROID && !UNITY_EDITOR
+            TheymesUnityAndroidBridge.OpenSupport();
+            return Task.CompletedTask;
+            #elif UNITY_WEBGL && !UNITY_EDITOR
+            TheymesUnityWebGLBridge.OpenSupport();
+            return Task.CompletedTask;
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.OpenSupportAsync(null);
+            #else
+            return Task.CompletedTask;
+            #endif
+        }
+
+        public static Task OpenSupportAsync(TheymesConfig config)
+        {
             #if UNITY_IOS && !UNITY_EDITOR
             TheymesUnityIosBridge.OpenSupport(TheymesJsonHelpers.ConfigToJson(config));
+            return Task.CompletedTask;
             #elif UNITY_ANDROID && !UNITY_EDITOR
             TheymesUnityAndroidBridge.OpenSupport(TheymesJsonHelpers.ConfigToJson(config));
+            return Task.CompletedTask;
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.OpenSupport(TheymesJsonHelpers.ConfigToJson(config));
+            return Task.CompletedTask;
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.OpenSupportAsync(config);
+            #else
+            return Task.CompletedTask;
             #endif
         }
 
         public static void OpenResource(string resource)
         {
-            #if UNITY_IOS && !UNITY_EDITOR
-            TheymesUnityIosBridge.OpenResource(resource);
-            #elif UNITY_ANDROID && !UNITY_EDITOR
-            TheymesUnityAndroidBridge.OpenResource(resource);
-            #elif UNITY_WEBGL && !UNITY_EDITOR
-            TheymesUnityWebGLBridge.OpenResource(resource);
-            #endif
+            OpenResourceAsync(resource);
         }
 
         public static void OpenResource(string resource, TheymesConfig config)
         {
+            OpenResourceAsync(resource, config);
+        }
+
+        public static Task OpenResourceAsync(string resource)
+        {
+            #if UNITY_IOS && !UNITY_EDITOR
+            TheymesUnityIosBridge.OpenResource(resource);
+            return Task.CompletedTask;
+            #elif UNITY_ANDROID && !UNITY_EDITOR
+            TheymesUnityAndroidBridge.OpenResource(resource);
+            return Task.CompletedTask;
+            #elif UNITY_WEBGL && !UNITY_EDITOR
+            TheymesUnityWebGLBridge.OpenResource(resource);
+            return Task.CompletedTask;
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.OpenResourceAsync(resource, null);
+            #else
+            return Task.CompletedTask;
+            #endif
+        }
+
+        public static Task OpenResourceAsync(string resource, TheymesConfig config)
+        {
             #if UNITY_IOS && !UNITY_EDITOR
             TheymesUnityIosBridge.OpenResource(resource, TheymesJsonHelpers.ConfigToJson(config));
+            return Task.CompletedTask;
             #elif UNITY_ANDROID && !UNITY_EDITOR
             TheymesUnityAndroidBridge.OpenResource(resource, TheymesJsonHelpers.ConfigToJson(config));
+            return Task.CompletedTask;
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.OpenResource(resource, TheymesJsonHelpers.ConfigToJson(config));
+            return Task.CompletedTask;
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.OpenResourceAsync(resource, config);
+            #else
+            return Task.CompletedTask;
             #endif
         }
 
@@ -101,6 +158,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.Close();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.Close();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.Close();
             #endif
         }
 
@@ -112,6 +171,8 @@ namespace Theymes
             return TheymesUnityAndroidBridge.GetSdkVersion();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             return TheymesUnityWebGLBridge.GetSdkVersion();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.GetSdkVersion();
             #else
             return null;
             #endif
@@ -125,6 +186,8 @@ namespace Theymes
             return TheymesUnityAndroidBridge.IsSupported();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             return TheymesUnityWebGLBridge.IsSupported();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.IsSupported();
             #else
             return false;
             #endif
@@ -138,6 +201,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.RequestNotificationPermission();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.RequestNotificationPermission();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.RequestNotificationPermission();
             #endif
         }
 
@@ -149,6 +214,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.EnableNotifications();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.EnableNotifications();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.EnableNotifications();
             #endif
         }
 
@@ -160,6 +227,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.DisableNotifications();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.DisableNotifications();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.DisableNotifications();
             #endif
         }
 
@@ -171,6 +240,8 @@ namespace Theymes
             return TheymesUnityAndroidBridge.GetUnreadMessageCount();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             return TheymesUnityWebGLBridge.GetUnreadMessageCount();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.GetUnreadMessageCount();
             #else
             return 0;
             #endif
@@ -184,6 +255,8 @@ namespace Theymes
             return TheymesUnityAndroidBridge.GetUnansweredMessageCount();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             return TheymesUnityWebGLBridge.GetUnansweredMessageCount();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.GetUnansweredMessageCount();
             #else
             return 0;
             #endif
@@ -197,6 +270,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.RecordRetention();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.RecordRetention();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.RecordRetention();
             #endif
         }
 
@@ -208,6 +283,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.Reset();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.Reset();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.Reset();
             #endif
         }
 
@@ -219,6 +296,8 @@ namespace Theymes
             return TheymesUnityAndroidBridge.GetLanguage();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             return TheymesUnityWebGLBridge.GetLanguage();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.GetLanguage();
             #else
             return null;
             #endif
@@ -232,6 +311,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.SetLanguage(language);
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.SetLanguage(language);
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.SetLanguage(language);
             #endif
         }
 
@@ -243,6 +324,8 @@ namespace Theymes
             return TheymesUnityAndroidBridge.GetSignedMetadataToken();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             return TheymesUnityWebGLBridge.GetSignedMetadataToken();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.GetSignedMetadataToken();
             #else
             return null;
             #endif
@@ -256,6 +339,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.SetSignedMetadataToken(token);
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.SetSignedMetadataToken(token);
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.SetSignedMetadataToken(token);
             #endif
         }
 
@@ -267,6 +352,8 @@ namespace Theymes
             return TheymesJsonHelpers.JsonToPlayer(TheymesUnityAndroidBridge.GetPlayer());
             #elif UNITY_WEBGL && !UNITY_EDITOR
             return TheymesJsonHelpers.JsonToPlayer(TheymesUnityWebGLBridge.GetPlayer());
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.GetPlayer();
             #else
             return null;
             #endif
@@ -280,6 +367,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.SetPlayer(TheymesJsonHelpers.PlayerToJson(player));
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.SetPlayer(TheymesJsonHelpers.PlayerToJson(player));
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.SetPlayer(player);
             #endif
         }
 
@@ -291,6 +380,8 @@ namespace Theymes
             return TheymesJsonHelpers.JsonToStringList(TheymesUnityAndroidBridge.GetTags());
             #elif UNITY_WEBGL && !UNITY_EDITOR
             return TheymesJsonHelpers.JsonToStringList(TheymesUnityWebGLBridge.GetTags());
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.GetTags();
             #else
             return null;
             #endif
@@ -304,6 +395,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.SetTags(TheymesJsonHelpers.StringListToJson(tags));
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.SetTags(TheymesJsonHelpers.StringListToJson(tags));
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.SetTags(tags);
             #endif
         }
 
@@ -315,6 +408,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.AddTag(tag);
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.AddTag(tag);
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.AddTag(tag);
             #endif
         }
 
@@ -326,6 +421,47 @@ namespace Theymes
             TheymesUnityAndroidBridge.AddTags(TheymesJsonHelpers.StringListToJson(tags));
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.AddTags(TheymesJsonHelpers.StringListToJson(tags));
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.AddTags(tags);
+            #endif
+        }
+
+        public static void AddBreadcrumb(string breadcrumb)
+        {
+            #if UNITY_IOS && !UNITY_EDITOR
+            TheymesUnityIosBridge.AddBreadcrumb(breadcrumb);
+            #elif UNITY_ANDROID && !UNITY_EDITOR
+            TheymesUnityAndroidBridge.AddBreadcrumb(breadcrumb);
+            #elif UNITY_WEBGL && !UNITY_EDITOR
+            TheymesUnityWebGLBridge.AddBreadcrumb(breadcrumb);
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.AddBreadcrumb(breadcrumb);
+            #endif
+        }
+
+        public static void AddBreadcrumbs(IList<string> breadcrumbs)
+        {
+            #if UNITY_IOS && !UNITY_EDITOR
+            TheymesUnityIosBridge.AddBreadcrumbs(TheymesJsonHelpers.StringListToJson(breadcrumbs));
+            #elif UNITY_ANDROID && !UNITY_EDITOR
+            TheymesUnityAndroidBridge.AddBreadcrumbs(TheymesJsonHelpers.StringListToJson(breadcrumbs));
+            #elif UNITY_WEBGL && !UNITY_EDITOR
+            TheymesUnityWebGLBridge.AddBreadcrumbs(TheymesJsonHelpers.StringListToJson(breadcrumbs));
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.AddBreadcrumbs(breadcrumbs);
+            #endif
+        }
+
+        public static void ClearBreadcrumbs()
+        {
+            #if UNITY_IOS && !UNITY_EDITOR
+            TheymesUnityIosBridge.ClearBreadcrumbs();
+            #elif UNITY_ANDROID && !UNITY_EDITOR
+            TheymesUnityAndroidBridge.ClearBreadcrumbs();
+            #elif UNITY_WEBGL && !UNITY_EDITOR
+            TheymesUnityWebGLBridge.ClearBreadcrumbs();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.ClearBreadcrumbs();
             #endif
         }
 
@@ -337,6 +473,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.RemoveTag(tag);
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.RemoveTag(tag);
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.RemoveTag(tag);
             #endif
         }
 
@@ -348,6 +486,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.RemoveTags(TheymesJsonHelpers.StringListToJson(tags));
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.RemoveTags(TheymesJsonHelpers.StringListToJson(tags));
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.RemoveTags(tags);
             #endif
         }
 
@@ -359,6 +499,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.RemoveAllTags();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.RemoveAllTags();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.RemoveAllTags();
             #endif
         }
 
@@ -370,6 +512,8 @@ namespace Theymes
             return TheymesJsonHelpers.JsonToDictionary(TheymesUnityAndroidBridge.GetFields());
             #elif UNITY_WEBGL && !UNITY_EDITOR
             return TheymesJsonHelpers.JsonToDictionary(TheymesUnityWebGLBridge.GetFields());
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.GetFields();
             #else
             return null;
             #endif
@@ -383,6 +527,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.SetFields(TheymesJsonHelpers.DictionaryToJson(fields));
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.SetFields(TheymesJsonHelpers.DictionaryToJson(fields));
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.SetFields(fields);
             #endif
         }
 
@@ -394,6 +540,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.AddField(key, TheymesJsonHelpers.ObjectToJson(value));
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.AddField(key, TheymesJsonHelpers.ObjectToJson(value));
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.AddField(key, value);
             #endif
         }
 
@@ -405,6 +553,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.AddFields(TheymesJsonHelpers.DictionaryToJson(fields));
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.AddFields(TheymesJsonHelpers.DictionaryToJson(fields));
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.AddFields(fields);
             #endif
         }
 
@@ -416,6 +566,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.RemoveField(key);
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.RemoveField(key);
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.RemoveField(key);
             #endif
         }
 
@@ -427,6 +579,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.RemoveFields(TheymesJsonHelpers.StringListToJson(keys));
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.RemoveFields(TheymesJsonHelpers.StringListToJson(keys));
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.RemoveFields(keys);
             #endif
         }
 
@@ -438,6 +592,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.RemoveAllFields();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.RemoveAllFields();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.RemoveAllFields();
             #endif
         }
 
@@ -449,6 +605,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.EnableLogging();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.EnableLogging();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.EnableLogging();
             #endif
         }
 
@@ -460,6 +618,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.DisableLogging();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.DisableLogging();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.DisableLogging();
             #endif
         }
 
@@ -471,6 +631,8 @@ namespace Theymes
             return TheymesUnityAndroidBridge.IsYoungPlayer();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             return TheymesUnityWebGLBridge.IsYoungPlayer();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.IsYoungPlayer();
             #else
             return false;
             #endif
@@ -484,6 +646,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.SetYoungPlayer(youngPlayer);
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.SetYoungPlayer(youngPlayer);
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.SetYoungPlayer(youngPlayer);
             #endif
         }
 
@@ -495,6 +659,8 @@ namespace Theymes
             return TheymesUnityAndroidBridge.IsPrivacyMode();
             #elif UNITY_WEBGL && !UNITY_EDITOR
             return TheymesUnityWebGLBridge.IsPrivacyMode();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.IsPrivacyMode();
             #else
             return false;
             #endif
@@ -508,6 +674,8 @@ namespace Theymes
             TheymesUnityAndroidBridge.SetPrivacyMode(privacyMode);
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.SetPrivacyMode(privacyMode);
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.SetPrivacyMode(privacyMode);
             #endif
         }
 
@@ -517,11 +685,16 @@ namespace Theymes
             TheymesUnityIosBridge.RegisterPushToken(token, type);
             #elif UNITY_ANDROID && !UNITY_EDITOR
             TheymesUnityAndroidBridge.RegisterPushToken(token, type);
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.RegisterPushToken(token, type);
             #endif
         }
 
         public static bool IsTheymesNotification(IDictionary<string, string> data)
         {
+            #if UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.IsTheymesNotification(data);
+            #else
             if (data == null) {
                 return false;
             }
@@ -535,10 +708,14 @@ namespace Theymes
             }
 
             return true;
+            #endif
         }
 
         public static void HandleNotification(bool opened, IDictionary<string, string> data)
         {
+            #if UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.HandleNotification(opened, data);
+            #else
             if (!IsTheymesNotification(data)) {
                 return;
             }
@@ -546,6 +723,7 @@ namespace Theymes
             // on iOS the notifications are automatically handled
             #if UNITY_ANDROID && !UNITY_EDITOR
             TheymesUnityAndroidBridge.HandleNotification(opened, TheymesJsonHelpers.DictionaryToJson(data));
+            #endif
             #endif
         }
 
@@ -560,6 +738,8 @@ namespace Theymes
             return TheymesUnityIosBridge.HandlePendingNotificationAction(TheymesJsonHelpers.ConfigToJson(config));
             #elif UNITY_ANDROID && !UNITY_EDITOR
             return TheymesUnityAndroidBridge.HandlePendingNotificationAction(TheymesJsonHelpers.ConfigToJson(config));
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.HandlePendingNotificationAction(config);
             #else
             return false;
             #endif
@@ -571,6 +751,8 @@ namespace Theymes
             return TheymesUnityIosBridge.HasPendingNotificationAction();
             #elif UNITY_ANDROID && !UNITY_EDITOR
             return TheymesUnityAndroidBridge.HasPendingNotificationAction();
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            return TheymesSdkStandalone.HasPendingNotificationAction();
             #else
             return false;
             #endif
@@ -584,18 +766,24 @@ namespace Theymes
             TheymesUnityIosBridge.onClose += _TriggerOnClose;
             TheymesUnityIosBridge.onUnreadMessageCountUpdated += _TriggerOnUnreadMessageCountUpdated;
             TheymesUnityIosBridge.onUnansweredMessageCountUpdated += _TriggerOnUnansweredMessageCountUpdated;
+            TheymesUnityIosBridge.onSignedMetadataTokenExpirationUpdated += _TriggerOnSignedMetadataTokenExpirationUpdated;
             #elif UNITY_ANDROID && !UNITY_EDITOR
             TheymesUnityAndroidBridge.SetupEventListeners();
             TheymesUnityAndroidBridge.onOpen += _TriggerOnOpen;
             TheymesUnityAndroidBridge.onClose += _TriggerOnClose;
             TheymesUnityAndroidBridge.onUnreadMessageCountUpdated += _TriggerOnUnreadMessageCountUpdated;
             TheymesUnityAndroidBridge.onUnansweredMessageCountUpdated += _TriggerOnUnansweredMessageCountUpdated;
+            TheymesUnityAndroidBridge.onSignedMetadataTokenExpirationUpdated += _TriggerOnSignedMetadataTokenExpirationUpdated;
             #elif UNITY_WEBGL && !UNITY_EDITOR
             TheymesUnityWebGLBridge.SetupEventListeners();
             TheymesUnityWebGLBridge.onOpen += _TriggerOnOpen;
             TheymesUnityWebGLBridge.onClose += _TriggerOnClose;
             TheymesUnityWebGLBridge.onUnreadMessageCountUpdated += _TriggerOnUnreadMessageCountUpdated;
             TheymesUnityWebGLBridge.onUnansweredMessageCountUpdated += _TriggerOnUnansweredMessageCountUpdated;
+            TheymesUnityWebGLBridge.onSignedMetadataTokenExpirationUpdated += _TriggerOnSignedMetadataTokenExpirationUpdated;
+            #elif UNITY_STANDALONE || UNITY_EDITOR
+            TheymesSdkStandalone.onOpen += _TriggerOnOpen;
+            TheymesSdkStandalone.onSignedMetadataTokenExpirationUpdated += _TriggerOnSignedMetadataTokenExpirationUpdated;
             #endif
         }
 
@@ -618,5 +806,11 @@ namespace Theymes
         {
             onUnansweredMessageCountUpdated?.Invoke(count);
         }
+
+        private static void _TriggerOnSignedMetadataTokenExpirationUpdated(int expiresInSeconds)
+        {
+            onSignedMetadataTokenExpirationUpdated?.Invoke(expiresInSeconds);
+        }
+
     }
 }

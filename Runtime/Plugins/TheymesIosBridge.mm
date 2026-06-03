@@ -10,6 +10,7 @@ static OnOpenClose openCallback;
 static OnOpenClose closeCallback;
 static OnMessageCountUpdated unreadMessageCallback;
 static OnMessageCountUpdated unansweredMessageCallback;
+static OnMessageCountUpdated signedMetadataTokenExpirationCallback;
 
 @implementation TheymesIosBridgeDelegate
 - (void)didOpen {
@@ -30,6 +31,11 @@ static OnMessageCountUpdated unansweredMessageCallback;
 - (void)didUpdateUnansweredMessageCount:(NSInteger)count { 
     if (unansweredMessageCallback) {
         unansweredMessageCallback(count);
+    }
+}
+- (void)didUpdateSignedMetadataTokenExpiration:(NSInteger)expiresInSeconds {
+    if (signedMetadataTokenExpirationCallback) {
+        signedMetadataTokenExpirationCallback(expiresInSeconds);
     }
 }
 @end
@@ -232,6 +238,19 @@ void TheymesAddTags(const char *tags) {
     [Theymes addTags:tagsArray];
 }
 
+void TheymesAddBreadcrumb(const char *breadcrumb) {
+    [Theymes addBreadcrumb:cStringToNSString(breadcrumb)];
+}
+
+void TheymesAddBreadcrumbs(const char *breadcrumbs) {
+    NSArray *breadcrumbsArray = jsonStrPointerToNSArray(breadcrumbs);
+    [Theymes addBreadcrumbs:breadcrumbsArray];
+}
+
+void TheymesClearBreadcrumbs() {
+    [Theymes clearBreadcrumbs];
+}
+
 void TheymesRemoveTag(const char *tag) {
     [Theymes removeTag:cStringToNSString(tag)];
 }
@@ -251,6 +270,10 @@ const char *TheymesGetFields() {
 
 void TheymesSetFields(const char *fields) {
     [Theymes setFields:jsonStrPointerToNSDictionary(fields)];
+}
+
+void TheymesSetBuiltinFields(const char *fields) {
+    [Theymes setBuiltinFields:jsonStrPointerToNSDictionary(fields)];
 }
 
 void TheymesAddField(const char *key, const char *value) {
@@ -340,4 +363,8 @@ void TheymesOnUnreadMessageCountUpdated(OnMessageCountUpdated callback) {
 
 void TheymesOnUnansweredMessageCountUpdated(OnMessageCountUpdated callback) {
     unansweredMessageCallback = callback;
+}
+
+void TheymesOnSignedMetadataTokenExpirationUpdated(OnMessageCountUpdated callback) {
+    signedMetadataTokenExpirationCallback = callback;
 }
