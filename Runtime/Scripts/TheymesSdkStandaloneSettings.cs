@@ -134,7 +134,7 @@ namespace Theymes
         private static async Task FetchSettingsOnceAsync()
         {
             var url =
-                $"https://{apiDomain}/api/settings?token={Uri.EscapeDataString(token)}&platform={Uri.EscapeDataString(GetPlatform())}&sdkVersion={Uri.EscapeDataString(SdkVersion)}";
+                $"https://{apiDomain}/api/settings?token={Uri.EscapeDataString(token)}&platform={Uri.EscapeDataString(GetPlatform())}&sdkVersion={Uri.EscapeDataString(TheymesSdk.SdkVersion)}";
             var response = await GetJsonAsync(url);
             LogInfo($"Received settings: {response}");
 

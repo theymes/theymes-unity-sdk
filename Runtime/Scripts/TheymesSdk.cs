@@ -6,6 +6,8 @@ namespace Theymes
 {
     public class TheymesSdk : MonoBehaviour
     {
+        internal const string SdkVersion = "1.4.1";
+
         public static event System.Action onOpen;
         public static event System.Action onClose;
         public static event System.Action<int> onUnreadMessageCountUpdated;
@@ -53,6 +55,7 @@ namespace Theymes
             return new Dictionary<string, object>
             {
                 { "_unityVersion", Application.unityVersion },
+                { "_unitySdkVersion", SdkVersion },
                 { "_unitySystemMemory", SystemInfo.systemMemorySize },
                 { "_unityGraphicsMemory", SystemInfo.graphicsMemorySize },
             };
@@ -165,6 +168,11 @@ namespace Theymes
 
         public static string GetSdkVersion()
         {
+            return SdkVersion;
+        }
+
+        public static string GetNativeSdkVersion()
+        {
             #if UNITY_IOS && !UNITY_EDITOR
             return TheymesUnityIosBridge.GetSdkVersion();
             #elif UNITY_ANDROID && !UNITY_EDITOR
@@ -172,9 +180,9 @@ namespace Theymes
             #elif UNITY_WEBGL && !UNITY_EDITOR
             return TheymesUnityWebGLBridge.GetSdkVersion();
             #elif UNITY_STANDALONE || UNITY_EDITOR
-            return TheymesSdkStandalone.GetSdkVersion();
+            return SdkVersion;
             #else
-            return null;
+            return SdkVersion;
             #endif
         }
 
