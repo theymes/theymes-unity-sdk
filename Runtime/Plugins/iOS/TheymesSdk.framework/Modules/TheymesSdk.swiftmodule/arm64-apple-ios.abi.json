@@ -2824,85 +2824,113 @@
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 563,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "BooleanLiteral",
-      "offset": 566,
+      "offset": 618,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "Array",
-      "offset": 1443,
+      "offset": 1495,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "Dictionary",
-      "offset": 1494,
+      "offset": 1546,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "Dictionary",
-      "offset": 1553,
+      "offset": 1605,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "BooleanLiteral",
-      "offset": 1601,
+      "offset": 1653,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "BooleanLiteral",
-      "offset": 1651,
+      "offset": 1703,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "BooleanLiteral",
-      "offset": 1926,
+      "offset": 1978,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "StringLiteral",
-      "offset": 1982,
+      "offset": 2034,
       "length": 17,
       "value": "\"com.theymes.sdk\""
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "StringLiteral",
-      "offset": 2011,
+      "offset": 2063,
       "length": 12,
       "value": "\"TheymesSdk\""
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2128,
+      "length": 2,
+      "value": "15"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2133,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2138,
+      "length": 4,
+      "value": "1000"
+    },
+    {
+      "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "Array",
-      "offset": 2261,
+      "offset": 2500,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "IntegerLiteral",
-      "offset": 2312,
+      "offset": 2551,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/Theymes.swift",
       "kind": "StringLiteral",
-      "offset": 2898,
+      "offset": 3137,
       "length": 32,
       "value": "\"com.theymes.sdk.NetworkMonitor\""
     },
@@ -2910,41 +2938,41 @@
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PersistedConfig.swift",
       "kind": "Array",
       "offset": 179,
-      "length": 50,
-      "value": "[\"eventPollerNextPollAt\", \"hasSupportInteraction\"]"
+      "length": 78,
+      "value": "[\"eventPollerNextPollAt\", \"hasSupportInteraction\", \"messageCountsUpdatedAtMs\"]"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PersistedConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 334,
+      "offset": 362,
       "length": 6,
       "value": "512000"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PersistedConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 397,
+      "offset": 425,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PersistedConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 469,
+      "offset": 497,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PersistedConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 474,
+      "offset": 502,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/reko\/Projects\/theymes\/theymes\/services\/sdk\/ios\/TheymesSdk\/TheymesSdk\/PersistedConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 479,
+      "offset": 507,
       "length": 2,
       "value": "60"
     },

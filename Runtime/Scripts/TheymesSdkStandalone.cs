@@ -353,6 +353,30 @@ namespace Theymes
             loggingEnabled = false;
         }
 
+        private static void LogInfo(string message)
+        {
+            if (loggingEnabled)
+            {
+                Console.WriteLine($"Theymes SDK: {message}");
+            }
+        }
+
+        private static void LogWarning(string message)
+        {
+            if (loggingEnabled)
+            {
+                Console.WriteLine($"Theymes SDK: {message}");
+            }
+        }
+
+        private static void LogError(string message)
+        {
+            if (loggingEnabled)
+            {
+                Console.Error.WriteLine($"Theymes SDK: {message}");
+            }
+        }
+
         public static bool IsYoungPlayer()
         {
             return youngPlayer;
@@ -608,7 +632,7 @@ namespace Theymes
             var body = Encoding.UTF8.GetBytes(json);
             using (var request = new UnityWebRequest(url, UnityWebRequest.kHttpVerbPOST))
             {
-                LogInfo($"Creating support session before opening browser");
+                LogInfo("Creating support session before opening browser");
                 request.uploadHandler = new UploadHandlerRaw(body);
                 request.downloadHandler = new DownloadHandlerBuffer();
                 request.SetRequestHeader("Content-Type", "application/json");

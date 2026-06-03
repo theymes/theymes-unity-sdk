@@ -363,29 +363,5 @@ namespace Theymes
         {
             return $"theymes.config.{token}.{domain}.{name}";
         }
-
-        private static void LogInfo(string message)
-        {
-            if (loggingEnabled)
-            {
-                Console.WriteLine($"Theymes SDK: {message}");
-            }
-        }
-
-        private static void LogWarning(string message)
-        {
-            if (loggingEnabled)
-            {
-                Console.WriteLine($"Theymes SDK: {message}");
-            }
-        }
-
-        private static void LogError(string message)
-        {
-            if (loggingEnabled)
-            {
-                Console.Error.WriteLine($"Theymes SDK: {message}");
-            }
-        }
     }
 }
